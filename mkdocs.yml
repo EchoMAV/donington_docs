@@ -3,9 +3,7 @@ repo_url: https://github.com/EchoMAV/donington_docs
 edit_uri: edit/master/donington_docs/
 repo_name: echomav/donington_docs
 nav:
-    - Home: index.md
-    - Donington: 
-        - General Documentation: donington.md       
+    - Home: donington.md    
 theme:
   name: material
   custom_dir: overrides
