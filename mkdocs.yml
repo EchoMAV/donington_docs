@@ -68,6 +68,7 @@ markdown_extensions:
 
 plugins:
   - glightbox
+  - open-in-new-tab
 
 copyright: |
   &copy; 2024 <a href="echomav.com"  target="_blank" rel="noopener">EchoMAV, LLC</a>
