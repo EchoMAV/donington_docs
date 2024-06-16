@@ -12,7 +12,7 @@
       
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.26">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.27">
     
     
       
@@ -98,7 +98,7 @@
 
   
 
-<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+<header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href="https://echomav.com" title="Donington Documentation" class="md-header__button md-logo" aria-label="Donington Documentation" data-md-component="logo">
       
@@ -185,41 +185,13 @@
     
   </nav>
   
-    
-      
-<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
-  <div class="md-grid">
-    <ul class="md-tabs__list">
-      
-        
-  
-  
-    
-  
-  
-    <li class="md-tabs__item md-tabs__item--active">
-      <a href="./" class="md-tabs__link">
-        
-  
-    
-  
-  Home
-
-      </a>
-    </li>
-  
-
-      
-    </ul>
-  </div>
-</nav>
-    
-  
 </header>
     
     <div class="md-container" data-md-component="container">
       
       
+        
+          
         
       
       <main class="md-main" data-md-component="main">
@@ -233,10 +205,10 @@
                     
 
 
+
   
 
-
-<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
     <a href="https://echomav.com" title="Donington Documentation" class="md-nav__button md-logo" aria-label="Donington Documentation" data-md-component="logo">
       
@@ -349,9 +321,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#pinouts" class="md-nav__link">
+  <a href="#pinouts-and-connectors" class="md-nav__link">
     <span class="md-ellipsis">
-      Pinouts
+      Pinouts and Connectors
     </span>
   </a>
   
@@ -381,86 +353,6 @@
               </div>
             
             
-              
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#overview" class="md-nav__link">
-    <span class="md-ellipsis">
-      Overview
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#mechanical-drawings-and-step-files" class="md-nav__link">
-    <span class="md-ellipsis">
-      Mechanical Drawings and STEP Files
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#system-diagramflowchart" class="md-nav__link">
-    <span class="md-ellipsis">
-      System Diagram/Flowchart
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#carrier-board-schematic" class="md-nav__link">
-    <span class="md-ellipsis">
-      Carrier Board Schematic
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#pinouts" class="md-nav__link">
-    <span class="md-ellipsis">
-      Pinouts
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#cellular-modem-installation" class="md-nav__link">
-    <span class="md-ellipsis">
-      Cellular Modem Installation
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-                  </div>
-                </div>
-              </div>
-            
           
           
             <div class="md-content" data-md-component="content">
@@ -487,11 +379,180 @@
 
 <h1 id="donington-documentation">Donington Documentation<a class="headerlink" href="#donington-documentation" title="Permanent link">&para;</a></h1>
 <h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
-<p>The Donington product offers andvanced capabilities for unmanned systems (PX4 and Ardupilot compatiable autopilot) combined with embedded computer power (Jetson Orin) and dual/redundant Septrino GNSS systems. The system is packaged in a robust aluminum case which has been designed to IP67 standards. The Donington product is based on the (EchoMAV EchoPilot AI)[https://echomav.com/product/echopilot-ai/], please refer to the (EchoPilot AI Documentation)[https://echomav.github.io/docs/latest/echopilot_ai/] for information specific to that device.</p>
+<p>The Donington product offers andvanced capabilities for unmanned systems (PX4 and Ardupilot compatiable autopilot) combined with embedded computer power (Jetson Orin) and dual/redundant Septrino GNSS systems. The system is packaged in a robust aluminum case which has been designed to IP67 standards. The Donington product is based on the EchoMAV <a href="https://echomav.com/product/echopilot-ai/">EchoPilot AI</a>, please refer to the <a href="https://echomav.github.io/docs/latest/echopilot_ai/">EchoPilot AI Documentation</a> for information specific to that device.</p>
 <h2 id="mechanical-drawings-and-step-files">Mechanical Drawings and STEP Files<a class="headerlink" href="#mechanical-drawings-and-step-files" title="Permanent link">&para;</a></h2>
+<p><img alt="Assembly" src="../assets/assembly.png" /></p>
 <h2 id="system-diagramflowchart">System Diagram/Flowchart<a class="headerlink" href="#system-diagramflowchart" title="Permanent link">&para;</a></h2>
 <h2 id="carrier-board-schematic">Carrier Board Schematic<a class="headerlink" href="#carrier-board-schematic" title="Permanent link">&para;</a></h2>
-<h2 id="pinouts">Pinouts<a class="headerlink" href="#pinouts" title="Permanent link">&para;</a></h2>
+<h2 id="pinouts-and-connectors">Pinouts and Connectors<a class="headerlink" href="#pinouts-and-connectors" title="Permanent link">&para;</a></h2>
+<p>The PWR LED on the left side indicates that the system is powered and running. The STATUS LED is an RGB output indicating the status of the autopilot. Please refer to the autopilot firmware documentation for the meaning of the STATUS LED, e.g. <a href="https://ardupilot.org/rover/docs/common-leds-pixhawk.html#rgb-leds">ArduRover RGB LED documenation</a>. Both LEDs can be deactivated by changing the position of a DIP switch located inside the case. </p>
+<p><img alt="Long Side Connectors" src="../assets/pinout_long.png" />
+<center></p>
+<table>
+<thead>
+<tr>
+<th>Connector</th>
+<th>Pins</th>
+<th>Type</th>
+<th>Part Number</th>
+<th>Mating Cable Assembly</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PWR</td>
+<td>4</td>
+<td>M12, A-Code Male</td>
+<td>T4140012041-000</td>
+<td>Tensility 10-03805</td>
+<td>13-36VDC, 4A + supply</td>
+</tr>
+<tr>
+<td>PWM</td>
+<td>12</td>
+<td>M12, A-Code Female</td>
+<td>T4141012121-000</td>
+<td>Custom</td>
+<td></td>
+</tr>
+<tr>
+<td>INS</td>
+<td>8</td>
+<td>M12, A-Code Female</td>
+<td>T4141012081-000</td>
+<td>Custom</td>
+<td></td>
+</tr>
+<tr>
+<td>IRIDIUM</td>
+<td>12</td>
+<td>M12, A-Code Female</td>
+<td>T4141012121-000</td>
+<td>Custom</td>
+<td></td>
+</tr>
+<tr>
+<td>FMU CAN</td>
+<td>4</td>
+<td>M12, A-Code Female</td>
+<td>T4141012041-000</td>
+<td>Custom</td>
+<td></td>
+</tr>
+<tr>
+<td>NMEA2K</td>
+<td>5</td>
+<td>M12, A-Code Female</td>
+<td>T4141012051-000</td>
+<td>Custom</td>
+<td></td>
+</tr>
+<tr>
+<td>ANALOG IN</td>
+<td>5</td>
+<td>M12, D-Code Female</td>
+<td>T4141512051-000</td>
+<td>Custom</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p></center></p>
+<p><img alt="Short Side Comms" src="../assets/pinout_short.png" /></p>
+<p><center></p>
+<table>
+<thead>
+<tr>
+<th>Connector</th>
+<th>Pins</th>
+<th>Type</th>
+<th>Part Number</th>
+<th>Mating Cable Assembly</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ETH</td>
+<td>4</td>
+<td>M12, D-Code Male</td>
+<td>T4141512041-000</td>
+<td>ASI-M12-RJ45-11101</td>
+<td>100 Mbps Ethernet to Jetson</td>
+</tr>
+<tr>
+<td>ETH</td>
+<td>4</td>
+<td>M12, D-Code Female</td>
+<td>T4141512041-000</td>
+<td>ASI-M12-RJ45-11101</td>
+<td>100 Mbps Ethernet to Jetson</td>
+</tr>
+<tr>
+<td>USB</td>
+<td>12</td>
+<td>M12, A-Code Female</td>
+<td>T4141012121-000</td>
+<td>Custom</td>
+<td>USB 3 SS to Jetson</td>
+</tr>
+<tr>
+<td>USB</td>
+<td>12</td>
+<td>M12, A-Code Female</td>
+<td>T4141012121-000</td>
+<td>Custom</td>
+<td>USB 3 SS to Jetson</td>
+</tr>
+</tbody>
+</table>
+<p></center></p>
+<p><img alt="Short Side RF" src="../assets/pinout_short.png" /></p>
+<p><center></p>
+<table>
+<thead>
+<tr>
+<th>Connector</th>
+<th>Type</th>
+<th>Part Number</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>H-1</td>
+<td>SMA</td>
+<td>CABLE 385 RF-150-A-2</td>
+<td>Mosaic H, Channel 1</td>
+</tr>
+<tr>
+<td>H-2</td>
+<td>SMA</td>
+<td>CABLE 385 RF-150-A-2</td>
+<td>Mosaic H, Channel 2</td>
+</tr>
+<tr>
+<td>X5</td>
+<td>SMA</td>
+<td>CABLE 385 RF-150-A-2</td>
+<td>Mosaic X5</td>
+</tr>
+<tr>
+<td>CELL1</td>
+<td>SMA</td>
+<td>CABLE 385 RF-150-A-2</td>
+<td>Cellular 1</td>
+</tr>
+<tr>
+<td>CELL2</td>
+<td>SMA</td>
+<td>CABLE 385 RF-150-A-2</td>
+<td>Cellular 2</td>
+</tr>
+</tbody>
+</table>
+<p></center></p>
 <h2 id="cellular-modem-installation">Cellular Modem Installation<a class="headerlink" href="#cellular-modem-installation" title="Permanent link">&para;</a></h2>
 
 
@@ -567,7 +628,7 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.tracking", "navigation.instant", "navigation.top", "search.suggest", "search.highlight", "content.tabs.link", "content.code.annotation", "content.code.copy", "toc.follow", "content.action.edit", "content.action.view", "content.code.copy"], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.sections", "navigation.tracking", "navigation.instant", "toc.integrate", "navigation.top", "search.suggest", "search.highlight", "content.tabs.link", "content.code.annotation", "content.code.copy", "toc.follow", "content.action.edit", "content.action.view", "content.code.copy"], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
     
     
       <script src="../assets/javascripts/bundle.ad660dcc.min.js"></script>
