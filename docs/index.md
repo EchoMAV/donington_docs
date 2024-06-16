@@ -4,12 +4,12 @@ Welcome to the EchoMAV Technical Library for the Donington system.
 
 <div class="grid cards" markdown>
 
-- [Overview](overview.md)
-- [Quick Start](quickstart.md)
-- [Hardware Guide](hardware.md)
-- [Software Guide](software.md)
-- [User Guide](userguide.md)
-- [Pinouts](electrical.md)
-- [Mechanical](mechanical.md)
+- [:material-border-all: Overview](overview.md)
+- [:material-run-fast: Quick Start](quickstart.md)
+- [:fontawesome-solid-microchip: Hardware Guide](hardware.md)
+- [:octicons-file-binary-24: Software Guide](software.md)
+- [:fontawesome-regular-file-code: User Guide](userguide.md)
+- [:material-connection: Pinouts](electrical.md)
+- [:fontawesome-solid-gear: Mechanical](mechanical.md)
 
 </div>
