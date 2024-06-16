@@ -11,6 +11,8 @@ The Donington product offers andvanced capabilities for unmanned systems (PX4 an
 
 ## System Diagram/Flowchart
 
+![Flow Chart](assets/flow_chart.png)
+
 ## Carrier Board Schematic
 
 ## Pinouts and Connectors

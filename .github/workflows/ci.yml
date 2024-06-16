@@ -21,6 +21,7 @@ jobs:
           restore-keys: |
             mkdocs-material-
       - run: pip install mkdocs-material 
+      - run: pip install mkdocs-glightbox
       - run: pip install mike 
       - run: git config user.name ci-bot
       - run: git config user.email ci-bot@example.com

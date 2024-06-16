@@ -66,5 +66,8 @@ markdown_extensions:
       emoji_index: !!python/name:materialx.emoji.twemoji
       emoji_generator: !!python/name:materialx.emoji.to_svg
 
+plugins:
+  - glightbox
+
 copyright: |
   &copy; 2024 <a href="echomav.com"  target="_blank" rel="noopener">EchoMAV, LLC</a>
