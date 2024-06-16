@@ -1,0 +1,1253 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="..">
+      
+      
+        <link rel="next" href="../echopilot_ai_pinout/">
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.5">
+    
+    
+      
+        <title>Hardware Overview - EchoMAV Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.7a7fce14.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.a0c5b2b5.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="blue">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#echopilot-ai-documentation" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+      </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="https://echomav.com" title="EchoMAV Documentation" class="md-header__button md-logo" aria-label="EchoMAV Documentation" data-md-component="logo">
+      
+  <img src="../assets/echomav-small-black-bg.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            EchoMAV Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Hardware Overview
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/EchoMAV/docs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    echomav/docs
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href=".." class="md-tabs__link">
+      Home
+    </a>
+  </li>
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="./" class="md-tabs__link md-tabs__link--active">
+        EchoPilot AI
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://echomav.com" title="EchoMAV Documentation" class="md-nav__button md-logo" aria-label="EchoMAV Documentation" data-md-component="logo">
+      
+  <img src="../assets/echomav-small-black-bg.png" alt="logo">
+
+    </a>
+    EchoMAV Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/EchoMAV/docs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    echomav/docs
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          EchoPilot AI
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          EchoPilot AI
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Hardware Overview
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Hardware Overview
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    Overview
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quick-start-guide" class="md-nav__link">
+    Quick Start Guide
+  </a>
+  
+    <nav class="md-nav" aria-label="Quick Start Guide">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#accessing-the-jetson-via-the-console" class="md-nav__link">
+    Accessing the Jetson via the console
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#connecting-to-the-fmu-via-the-usb-connector" class="md-nav__link">
+    Connecting to the FMU via the USB connector
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#board-components-and-connectors" class="md-nav__link">
+    Board Components and Connectors
+  </a>
+  
+    <nav class="md-nav" aria-label="Board Components and Connectors">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#echopilot-ai" class="md-nav__link">
+    EchoPilot AI
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#carrier-board" class="md-nav__link">
+    Carrier Board
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pinouts" class="md-nav__link">
+    Pinouts
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jetson-io-availability" class="md-nav__link">
+    Jetson IO Availability
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mechanical-drawings-and-step-files" class="md-nav__link">
+    Mechanical Drawings and STEP Files
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#notes-on-vibration-isolation" class="md-nav__link">
+    Notes on Vibration Isolation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-the-sd-card" class="md-nav__link">
+    Using the SD Card
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configure-the-network" class="md-nav__link">
+    Configure the Network
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interfacing-the-jetson-to-the-autopilot" class="md-nav__link">
+    Interfacing the Jetson to the Autopilot
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#can-termination" class="md-nav__link">
+    CAN Termination
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#remote-id-subsystem" class="md-nav__link">
+    Remote ID Subsystem
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../echopilot_ai_pinout/" class="md-nav__link">
+        EchoPilot AI Pinout
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../echopilot_carrier_pinout/" class="md-nav__link">
+        EchoPilot Carrier Pinout
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../echopilot_pwm_pinout/" class="md-nav__link">
+        EchoPilot PWM Pinout
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../build_px4/" class="md-nav__link">
+        Building PX4
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../build_ardupilot/" class="md-nav__link">
+        Building ArduPilot
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../compile_l4t/" class="md-nav__link">
+        Building L4T (Xavier NX)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../compile_l4t_nano/" class="md-nav__link">
+        Building L4T (Nano)
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    Overview
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quick-start-guide" class="md-nav__link">
+    Quick Start Guide
+  </a>
+  
+    <nav class="md-nav" aria-label="Quick Start Guide">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#accessing-the-jetson-via-the-console" class="md-nav__link">
+    Accessing the Jetson via the console
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#connecting-to-the-fmu-via-the-usb-connector" class="md-nav__link">
+    Connecting to the FMU via the USB connector
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#board-components-and-connectors" class="md-nav__link">
+    Board Components and Connectors
+  </a>
+  
+    <nav class="md-nav" aria-label="Board Components and Connectors">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#echopilot-ai" class="md-nav__link">
+    EchoPilot AI
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#carrier-board" class="md-nav__link">
+    Carrier Board
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pinouts" class="md-nav__link">
+    Pinouts
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jetson-io-availability" class="md-nav__link">
+    Jetson IO Availability
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mechanical-drawings-and-step-files" class="md-nav__link">
+    Mechanical Drawings and STEP Files
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#notes-on-vibration-isolation" class="md-nav__link">
+    Notes on Vibration Isolation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-the-sd-card" class="md-nav__link">
+    Using the SD Card
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configure-the-network" class="md-nav__link">
+    Configure the Network
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interfacing-the-jetson-to-the-autopilot" class="md-nav__link">
+    Interfacing the Jetson to the Autopilot
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#can-termination" class="md-nav__link">
+    CAN Termination
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#remote-id-subsystem" class="md-nav__link">
+    Remote ID Subsystem
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+    <a href="https://github.com/EchoMAV/docs/edit/master/docs/echopilot_ai.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z"/></svg>
+    </a>
+  
+  
+    
+      
+    
+    <a href="https://github.com/EchoMAV/docs/raw/master/docs/echopilot_ai.md" title="View source of this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.15 8.15 0 0 1-1.23-2Z"/></svg>
+    </a>
+  
+
+
+<h1 id="echopilot-ai-documentation">EchoPilot AI Documentation<a class="headerlink" href="#echopilot-ai-documentation" title="Permanent link">&para;</a></h1>
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
+<p>The EchoPilot AI is a highly integrated vehicle control and edge computing system designed to power next-generation uncrewed systems. The EchoPilot AI supports computer vision, machine learning, autonomy, artificial intelligence and other advanced edge computing needs. The EchoPilot AI implements a STM32H7-based autopilot compatible with the popular Ardupilot and PX4 projects, and uses Pixhawk <a href="https://github.com/pixhawk/Pixhawk-Standards/blob/master/DS-009%20Pixhawk%20Connector%20Standard.pdf">open-hardware connectivity standards</a>. </p>
+<p>The power of  an advanced autopilot is seamlessly combined with high-performance computing (including AI and machine learning), IP networking, cloud connectivity and flexible low-latency hardware accelerated video encoding.</p>
+<p><img alt="EchoPilot AI" src="../assets/echopilot_ai_stack.jpg" /></p>
+<p>Autopilot Sensors</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Rev 0</label><label for="__tabbed_1_2">Rev 1</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Part Number</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>IMU 1</td>
+<td>ICM42688P</td>
+</tr>
+<tr>
+<td>IMU 2</td>
+<td>ICM42688P</td>
+</tr>
+<tr>
+<td>IMU 3</td>
+<td>ICM42688P</td>
+</tr>
+<tr>
+<td>Barometer 1</td>
+<td>MS5611</td>
+</tr>
+<tr>
+<td>Magentometer</td>
+<td>PNI RM3100</td>
+</tr>
+<tr>
+<td>Add-On INS</td>
+<td>VectorNAV VN-X00 (optional)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="tabbed-block">
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Part Number</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>IMU 1</td>
+<td>ICM42688P</td>
+</tr>
+<tr>
+<td>IMU 2</td>
+<td>ICM42688P</td>
+</tr>
+<tr>
+<td>IMU 3</td>
+<td>ICM42688P</td>
+</tr>
+<tr>
+<td>Barometer 1</td>
+<td>ICP-20100</td>
+</tr>
+<tr>
+<td>Barometer 2</td>
+<td>ICP-20100</td>
+</tr>
+<tr>
+<td>Magentometer</td>
+<td>PNI RM3100</td>
+</tr>
+<tr>
+<td>Add-On INS</td>
+<td>VectorNAV VN-X00 (optional)</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<p>The hardware is configured into a two board stack. The upper board is the EchoPilot AI board, and it contains the flight management unit, peripherals, sensors and Nvidia Jetson interface. The lower board is the Carrier Board, and it handles power regulation and connectors. Two high-density FX23L-80S-0.5SV 80-pin board-to-board connectors are used between the two boards.</p>
+<p>This design philosophy achieves multiple goals:</p>
+<ol>
+<li>For integrated vehicle solutions, it is often desired to design a custom carrier board to add additional components, minimize cables/wiring and integrate power distribution. The EchoPilot AI's design allows you to optionally design a custom carrier board (using the provided Carrier Board as a <a href="https://github.com/EchoMAV/echopilot_ai_carrier">reference design</a>).</li>
+<li>A stacked solution minimizes X-Y size in exchange for moving into the Z axis, which is an acceptable compromise for most uncrewed vehicles.</li>
+<li>Moving the switching power regulators to the Carrier board reduces noise near the sensitive sensors on EchoPilot AI board and reduces the thermal load of the EchoPilot AI mainboard.</li>
+<li>A stacked design is more future proof, as peripherals can often be added to the Carrier Board without a re-design of the EchoPilot AI main board.</li>
+</ol>
+<h2 id="quick-start-guide">Quick Start Guide<a class="headerlink" href="#quick-start-guide" title="Permanent link">&para;</a></h2>
+<h3 id="accessing-the-jetson-via-the-console">Accessing the Jetson via the console<a class="headerlink" href="#accessing-the-jetson-via-the-console" title="Permanent link">&para;</a></h3>
+<p>These instructions assume you have a Jetson module that is already flashed. If you have a new Jetson module that is not flashed, please see <a href="/compile_l4t">Building and Flashing a Jetson with L4T</a> instructions.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Do not run the Jetson SOM without a heatsink. The module may be damaged or performance throttled. See <a href="http://connecttech.com">connecttech.com</a> for recommended active and passive heatsinks.</p>
+</div>
+<ol>
+<li>Assemble the EchoPilot AI board with a Carrier Board, using 8mm standoffs between the two boards.</li>
+<li>If a Jetson Module is not already installed in the EchoPilot AI, install the module now.</li>
+<li>Attached a USB cable between your host computer and J7 (Console) on the Carrier Board
+<img alt="Console USB Connection" src="../assets/usb-to-echopilot-carrier.png" /></li>
+<li>In step 3, your host computer should have enumerated a virtual comm port. You will now need to find the name of the port.</li>
+</ol>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p><strong>On Windows:</strong> Open Device Manager (Start → Control Panel → Hardware and Sound → Device Manager) Look in the Device Manager list, open the category "Ports", and note the COM port added <strong>USB Serial Port (COM?)</strong> (e.g., COM10).<br />
+<strong>On Linux:</strong> Run <code>dmesg -w</code> and then plug in unplug and replug in the USB cable. You should see the name of the device added, typically <code>FTDI USB Serial device converter now attached to ttyUSB?</code> (e.g., ttyUSB0). </p>
+</div>
+<p>Use a terminal program to connect to the Jetson's console at 115200 baud, 8N1. </p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p><strong>On Windows:</strong> We recommend <a href="https://www.putty.org/">Putty</a> or <a href="https://osdn.net/projects/ttssh2/releases/">TeraTerm</a>.<br />
+<strong>On Linux:</strong> We recommend Picocom. Install with <code>sudo apt-get install picocom</code>. Use with <code>picocom /dev/ttyUSB? -b 115200</code>. To exit picocom, use <code>Ctrl-a Ctrl-x</code>.</p>
+</div>
+<p>Power the Carrier Board with 7-56VDC source capable of supplying up to <strong>4A</strong>.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>If using a bench supply with over-current protection, we recommend turning it <strong>OFF</strong>. The boot process requires short bursts of high current and over-current protection on some supplies will result in a failed boot.</p>
+</div>
+<p>You should now see the boot messages in your console, and once boot is complete, you will see a login prompt.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The default username is <strong>echopilot</strong> and the default password is <strong>echopilot</strong></p>
+</div>
+<div class="admonition success">
+<p class="admonition-title">Success</p>
+<p>At this point you are logged into the Jetson and can begin <a href="#configure-the-network">configuring the network</a>, installing applications, etc.</p>
+</div>
+<h3 id="connecting-to-the-fmu-via-the-usb-connector">Connecting to the FMU via the USB connector<a class="headerlink" href="#connecting-to-the-fmu-via-the-usb-connector" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Attach a USB cable between the host computer and the <strong>FMU USB</strong> connector (J7).</li>
+<li>Start a ground control application on the host computer such as <a href="https://docs.qgroundcontrol.com/master/en/getting_started/download_and_install.html">QGroundControl</a> or <a href="https://ardupilot.org/planner/docs/mission-planner-installation.html">Mission Planner</a>.</li>
+</ol>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p><strong>QGroundControl:</strong> Will automatically connect.<br />
+<strong>Mission Planner:</strong> Select the appropriate COM port at the top right, 115200, then click CONNECT.</p>
+</div>
+<h2 id="board-components-and-connectors">Board Components and Connectors<a class="headerlink" href="#board-components-and-connectors" title="Permanent link">&para;</a></h2>
+<h3 id="echopilot-ai">EchoPilot AI<a class="headerlink" href="#echopilot-ai" title="Permanent link">&para;</a></h3>
+<p><img alt="Top Side Components" src="../assets/top-side-labels.png" /></p>
+<p><img alt="Bottom Side Components" src="../assets/bottom-side-labels.png" /></p>
+<h3 id="carrier-board">Carrier Board<a class="headerlink" href="#carrier-board" title="Permanent link">&para;</a></h3>
+<p><img alt="Top Side Components" src="../assets/top-side-labels-carrier-board.png" /></p>
+<p><img alt="Bottom Side Components" src="../assets/bottom-side-labels-carrier-board.png" /></p>
+<h3 id="pinouts">Pinouts<a class="headerlink" href="#pinouts" title="Permanent link">&para;</a></h3>
+<p>For EchoPilot AI Pinouts, refer to the <a href="../echopilot_ai_pinout/">EchoPilot AI Pinout Page</a>.  </p>
+<p>For Carrier Board Pinouts, refer to the <a href="../echopilot_carrier_pinout/">Carrier Board Pinout Page</a>.</p>
+<h2 id="jetson-io-availability">Jetson IO Availability<a class="headerlink" href="#jetson-io-availability" title="Permanent link">&para;</a></h2>
+<p>The following Jetson IO pins are brought out to the B2B connector J5 and are available for customer use:</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>*Changes to the direction and functionality of these pins may be possible based on the Jetson pinmux configuration.</p>
+</div>
+<table>
+<thead>
+<tr>
+<th>Jetson Pin</th>
+<th>Direction</th>
+<th>B2B (J5)</th>
+<th>Voltage</th>
+<th>Default Use</th>
+<th>Pin Description (Xavier)</th>
+<th>Pin Description (Nano)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PIN 211</td>
+<td>O</td>
+<td>36</td>
+<td>+1.8V</td>
+<td>Audio MCLK</td>
+<td>AUDIO_MCLK</td>
+<td>AUDIO_MCLK</td>
+</tr>
+<tr>
+<td>PIN 212</td>
+<td>IO</td>
+<td>38</td>
+<td>+1.8V</td>
+<td>Spare IO</td>
+<td>GPIO3_PQ.01</td>
+<td>GPIO3_PV.01</td>
+</tr>
+<tr>
+<td>PIN 218</td>
+<td>IO</td>
+<td>37</td>
+<td>+1.8V</td>
+<td>Spare IO</td>
+<td>GPIO3_PCC.04</td>
+<td>GPIO3_PY.02</td>
+</tr>
+<tr>
+<td>PIN 126</td>
+<td>I</td>
+<td>74</td>
+<td>+3.3V*</td>
+<td>Iridium Ring</td>
+<td>GPIO3_PCC.00</td>
+<td>GPIO3_PI.02</td>
+</tr>
+<tr>
+<td>PIN 206</td>
+<td>I</td>
+<td>73</td>
+<td>+3.3V*</td>
+<td>Iridium NA</td>
+<td>GPIO3_PR.00</td>
+<td>GPIO3_PV.00</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>*Pins 126 and 206 are level-shifted from 1.8V to 3.3V prior to the B2B (J5) connector via a TXS0108ERGYR level translator.</p>
+</div>
+<p>The following Jetson IO is used internally by the EchoPilot AI:</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>*Changes to the pinmux affecting these pins may break functionality.</p>
+</div>
+<table>
+<thead>
+<tr>
+<th>Jetson Pin</th>
+<th>Direction</th>
+<th>Voltage</th>
+<th>Use</th>
+<th>Pin Description (Xavier)</th>
+<th>Pin Description (Nano)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PIN 87</td>
+<td>Pwr</td>
+<td>5V</td>
+<td>Vbus Detect</td>
+<td>USB_VBUS_EN0</td>
+<td>USB_VBUS_EN0</td>
+</tr>
+<tr>
+<td>PIN 128</td>
+<td>O</td>
+<td>+1.8V</td>
+<td>SD Card Enable</td>
+<td>GPIO3_PCC.02</td>
+<td>GPIO3_PH.07</td>
+</tr>
+<tr>
+<td>PIN 130</td>
+<td>O</td>
+<td>+1.8V</td>
+<td>Camera Mux</td>
+<td>GPIO3_PCC.03</td>
+<td>GPIO3_PI.00</td>
+</tr>
+<tr>
+<td>PIN 208</td>
+<td>I</td>
+<td>+1.8V</td>
+<td>SD Card Detect</td>
+<td>GPIO3_PQ.02</td>
+<td>GPIO3_PZ.02</td>
+</tr>
+</tbody>
+</table>
+<p>The following Jetson IO pins are brought out to the FAN (J38) connector:</p>
+<table>
+<thead>
+<tr>
+<th>Jetson Pin</th>
+<th>Direction</th>
+<th>Voltage</th>
+<th>Use</th>
+<th>Pin Description (Xavier)</th>
+<th>Pin Description (Nano)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PIN 230</td>
+<td>O</td>
+<td>+5V</td>
+<td>Fan PWM</td>
+<td>GP_PWM6</td>
+<td>PM3_PWM3</td>
+</tr>
+<tr>
+<td>PIN 127</td>
+<td>I</td>
+<td>+5V</td>
+<td>Fan Tach</td>
+<td>GPIO3_PQ.02</td>
+<td>GPIO3_PI.01</td>
+</tr>
+</tbody>
+</table>
+<h2 id="mechanical-drawings-and-step-files">Mechanical Drawings and STEP Files<a class="headerlink" href="#mechanical-drawings-and-step-files" title="Permanent link">&para;</a></h2>
+<p><img alt="XY Dimensions" src="../assets/echopilot_ai_xy_dimensions.png" /></p>
+<figure>
+<p><img alt="Z Dimensions (without Carrier Board)" src="../assets/echopilot_ai_z_dimensions.png" width="600" />
+  </p>
+<figcaption>With Carrier Board Attached</figcaption>
+</figure>
+<figure>
+<p><img alt="Z Dimensions (with Carrier Board)" src="../assets/echopilot_ai_z_only_dimensions.png" width="600" />
+  </p>
+<figcaption>EchoPilot AI without a Carrier Board Attached</figcaption>
+</figure>
+<p><a href="https://echomav.com/mechanical/echopilot_ai_r0.step">EchoPilot AI 3D Model (STEP) File Download</a> (right click, save link as)</p>
+<p><a href="https://echomav.com/mechanical/echopilot_ai_carrier_r0.step">EchoPilot AI Universal Carrier Board 3D model (STEP) File Download</a> (right click, save link as)</p>
+<p><a href="https://echomav.com/mechanical/echopilot_pwm_breakout.step">EchoPilot AI PWM Breakout Board 3D model (STEP) File Download</a> (right click, save link as)</p>
+<h2 id="notes-on-vibration-isolation">Notes on Vibration Isolation<a class="headerlink" href="#notes-on-vibration-isolation" title="Permanent link">&para;</a></h2>
+<p>Many commercial autopilots use foam vibration isolation on a daughterboard containing the IMUs. You'll notice the EchoPilot AI does not use this type of design and the IMUs are mounted directly to the circuit board. The reason for this is that we feel better vibration isolation can be achieved (if required) by leveraging the mass of the entire EchoPilot system (carrier board, main board and Jetson SOM) rather than the very small mass of an IMU daughterboard. For the types of vibrations encountered by large-prop multi-rotors and piston-based engines (50-90 Hz), the total mass of the EchoPilot system mounted on vibration silicone isolators or wire rope isolators are very effective. This design has the added benefits of protecting critical electronics from exposure to continuous vibrations.  </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Note that for small and medium multi-rotors and electric planes, electric quadplanes and other vehicle types, vibration isolation is very rarely needed. </p>
+</div>
+<h2 id="using-the-sd-card">Using the SD Card<a class="headerlink" href="#using-the-sd-card" title="Permanent link">&para;</a></h2>
+<p>The SD card supports hot-plugging. When connected, <code>/dev/mmcblk1p1</code> should be found by the operating system. To mount this drive to a directory (e.g., <code>/sdcard</code>) use the following command:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>mkdir /sdcard
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>sudo mount /dev/mmcblk1p1 /sdcard
+</code></pre></div>
+To unmount it:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>sudo umount /dev/mmcblk1p1 /sdcard
+</code></pre></div></p>
+<h2 id="configure-the-network">Configure the Network<a class="headerlink" href="#configure-the-network" title="Permanent link">&para;</a></h2>
+<p>Linux for Tegra uses networkmanager (<code>nmcli</code>) for its network interfaces. Below you will find a few commands for common network tasks.</p>
+<p>Show connections:  <br />
+<code>nmcli con show</code></p>
+<p>Delete the default connection ("Wired connection 1") and set up a static connection called <code>static-eth0</code> with an IP of 172.20.1.100, a netmask of 255.255.0.0 and a gateway of 172.20.2.100:  <br />
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>sudo nmcli c delete &quot;Wired connection 1&quot;
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>sudo nmcli c add con-name static-eth0 ifname eth0 type ethernet ip4 172.20.1.20/16 gw4 172.20.2.100
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>sudo nmcli c up static-eth0
+</code></pre></div></p>
+<p>Change IP address of <code>static-eth0</code> connection to <code>192.168.1.4/16</code>:  <br />
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>sudo nmcli con mod static-eth0 ipv4.address 192.168.1.1/16
+</code></pre></div></p>
+<p>Change gateway of <code>static-eth0</code> connection to <code>192.168.1.1</code>:  <br />
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>sudo nmcli con mod static-eth0 ipv4.gateway 192.168.1.1
+</code></pre></div></p>
+<p>Change dns of <code>static-eth0</code> connection to <code>8.8.8.8</code>:     <br />
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>sudo nmcli con mod static-eth0 ipv4.dns &quot;8.8.8.8&quot;
+</code></pre></div></p>
+<p>Take down/up of <code>static-eth0</code>:    <br />
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>sudo nmcli con down static-eth0
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>sudo nmcli con up static-eth0
+</code></pre></div>
+Delete <code>static-eth0</code> connection:  <br />
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>sudo nmcli c delete &quot;static-eth0&quot;
+</code></pre></div></p>
+<p>Add new connection called <code>static-eth0</code> with IP <code>172.20.2.22/16</code> and gateway <code>172.20.2.100</code>:  <br />
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>sudo nmcli c add con-name static-eth0 ifname eth0 type ethernet ip4 172.20.2.22/16 gw4 172.20.2.100
+</code></pre></div></p>
+<p>Add a persistent route so that multicast traffic to 224.x.x.x goes to the <code>static-eth0</code> connection:<br />
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>sudo nmcli con mod static-eth0 +ipv4.routes &quot;224.0.0.0/8&quot;
+</code></pre></div></p>
+<p>Change eth0 to enable remove static IP and enable DHCP (In this case, it would make more sense to delete the connection since it is named <code>static-eth0</code> and call it something else, but for edification:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>sudo nmcli con mod static-eth0 ipv4.address &quot;&quot;
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>sudo nmcli con mod static-eth0 ipv4.method auto
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>sudo nmcli con down static-eth0
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>sudo nmcli con up static-eth0
+</code></pre></div></p>
+<h2 id="interfacing-the-jetson-to-the-autopilot">Interfacing the Jetson to the Autopilot<a class="headerlink" href="#interfacing-the-jetson-to-the-autopilot" title="Permanent link">&para;</a></h2>
+<p>The autopilot has a high-speed serial interface between the STM32H7 and the Jetson SOM. The Jetson UART1 (pins 203, 205) are connected to the autopilot's USART3 (Typically Telem2). To enable <a href="https://mavlink.io/en/">MAVLink</a> data, you will need to check and/or modify PX4/Ardupilot parameters to ensure that Telem2 is set to MAVLink and set the baud rate to the desired value. A typical baud rate is 500,000 but you can use any baud rate you wish as long as the application receiving MAVLink on the Jetson is configured to match. </p>
+<p>On the Jetson side, UART1 is typically <code>/dev/ttyTHS2</code>.</p>
+<p>There are many options available for MAVLink routing and handling. One typical application is routing the MAVLink data over a network - and <a href="https://github.com/mavlink-router/mavlink-router">MAVLink Router</a> is a popular open-source solution. To use MAVLink Router to route MAVLink packets from UART1 (/dev/ttyTHS2) to a UDP endpoint (192.168.1.10:14550) on the network, use the following command:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>$ mavlink-routerd -e 192.168.1.10:14550 /dev/ttyTHS2:5000000
+</code></pre></div>
+<p>If you have issues accessing <code>/dev/ttyTHSX</code>, please disable <code>nvgetty</code> and ensure you are a member of the <code>dialout</code> group:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>sudo systemctl stop nvgetty
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>sudo systemctl disable nvgetty
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>sudo usermod -aG dialout $USER
+</code></pre></div></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Reboot to apply changes.</p>
+</div>
+<h2 id="can-termination">CAN Termination<a class="headerlink" href="#can-termination" title="Permanent link">&para;</a></h2>
+<p>The 2 CAN connections from the FMU (CAN1 and CAN2) and the 1 from the Jetson are driven by LTC2875 transceivers and contain termination resistors at the drivers. Should you desire to remove these termination resistors (e.g., you want to place the EchoPilot AI in the middle of a CAN chain rather than at the end), refer to the following:  </p>
+<table>
+<thead>
+<tr>
+<th>CAN</th>
+<th>Resistor Label</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>FMU CAN1</td>
+<td>R19 and R156</td>
+<td>Near U4 and U45, size 0402, see important info below</td>
+</tr>
+<tr>
+<td>FMU CAN2</td>
+<td>R9</td>
+<td>Near U3, size 0402</td>
+</tr>
+<tr>
+<td>JETSON CAN1</td>
+<td>R95</td>
+<td>Near U32 (Rev1+ only), size 0402</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>FMU CAN1 default configuration provides connectivity between the FMU and the RemoteID system. Therefore, two CAN transceivers with termination resistors are installed by default. If you wish to use CAN1 with the EchoPilot at the END of the chain, remove R156. If you wish to use the EchoPilot in the MIDDLE of a chain, remove both R19 and R156. </p>
+</div>
+<h2 id="remote-id-subsystem">Remote ID Subsystem<a class="headerlink" href="#remote-id-subsystem" title="Permanent link">&para;</a></h2>
+<p>The Remote ID system is based on an ESP32-C3 and is designed to work with the <a href="https://github.com/ArduPilot/ArduRemoteID">ArduRemoteID</a> project and Open Drone ID standards.</p>
+<p>ArduRemoteID is is an implementation of a MAVLink and DroneCAN OpenDroneID transmitter. It aims to provide a transmitter solution for the FAA standard RemoteID requirement, meeting the transmitter component of the ASTM F3586-22 Means of Compliance. It also aims to be compliant with the RemoteID regulation in the EU.</p>
+<p>It is the responsibility of the user to configure the ArduRemoteID firmware in a way that it is compliant with the local RemoteID regulation. For instance, in the USA it is mandatory that UAV manufacturers submit a DoC (Declaration of Conformance) to the FAA where they state that their product is compliant with the RemoteID regulation.</p>
+<p>To flash ArduRemote ID to the ESPS32-C3, you will need a TC2030-USB-NL cable from <a href="https://www.tag-connect.com">tag-connect.com</a> and follow the flashing instructions from the <a href="https://github.com/ArduPilot/ArduRemoteID#flashing">AruRemoteID</a> project.</p>
+<p>To configure the Remote ID system, parameters can be accessed from DroneCAN (via Mission Planner or DroneCAN GUI) or with MAVLink. To use DroneCAN, <a href="https://ardupilot.org/copter/docs/common-slcan-f7h7.html#common-slcan-f7h7">SLCAN will need to be enabled</a> to allow the autopilot to connect to the CANBUS through USB.  </p>
+<p>For making changes to DroneCAN devices, see the instructions <a href="https://ardupilot.org/copter/docs/common-slcan-f7h7.html#making-changes-to-dronecan-devices">here</a>. The FMU is connected to the ESP32-C3 via CAN1, with the default configuration providing termination resistors at both the FMU side and ESP32 side.</p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            Back to top
+          </button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      &copy; 2023 <a href="echomav.com"  target="_blank" rel="noopener">EchoMAV, LLC</a>
+
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/echomav" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 512"><!--! Font Awesome Free 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1zM480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2zm-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3zm-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.tracking", "navigation.instant", "navigation.top", "search.suggest", "search.highlight", "content.tabs.link", "content.code.annotation", "content.code.copy", "toc.follow", "content.action.edit", "content.action.view", "content.code.copy"], "search": "../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"default": "stable"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.407015b8.min.js"></script>
+      
+    
+  </body>
+</html>
