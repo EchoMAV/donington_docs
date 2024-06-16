@@ -31,7 +31,7 @@ USB       | 12 | M12, A-Code Female    | T4141012121-000 | Custom | USB 3 SS to 
 </center>
 
 
-![Short Side RF](assets/pinout_short.png)
+![Short Side RF](assets/pinout_short_rf.png)
 
 <center>
 
