@@ -396,6 +396,25 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#ip-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      IP Configuration
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="IP Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#changing-the-ip-address" class="md-nav__link">
+    <span class="md-ellipsis">
+      Changing the IP Address
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#configuring-for-dhcp" class="md-nav__link">
     <span class="md-ellipsis">
       Configuring for DHCP
@@ -403,38 +422,34 @@
   </a>
   
 </li>
+        
+          <li class="md-nav__item">
+  <a href="#configuring-or-changing-the-static-ip-address" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuring or Changing the Static IP Address
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#other-networkmanager-tips-and-tricks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Other NetworkManager tips and tricks
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
         <li class="md-nav__item">
   <a href="#connecting-to-the-fmu-via-the-usb-connector" class="md-nav__link">
     <span class="md-ellipsis">
       Connecting to the FMU via the USB connector
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#ip-configuration" class="md-nav__link">
-    <span class="md-ellipsis">
-      IP Configuration
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#telemetry-routing" class="md-nav__link">
-    <span class="md-ellipsis">
-      Telemetry Routing
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#obtaining-autopilot-data" class="md-nav__link">
-    <span class="md-ellipsis">
-      Obtaining Autopilot Data
     </span>
   </a>
   
@@ -534,18 +549,14 @@
 <p class="admonition-title">Warning</p>
 <p>Do not run the Jetson SOM without a heat sink. The lid of the Donington system is the primary heat sink, and running the Jetson with the lid off may result in shut down or throttling. If you need to run the system for a continued period of time with the lid removed, position a fan to move air over the heatspreader installed on the Jetson module.</p>
 </div>
-<ol>
-<li>Open the lid of the Donington system, to expose the inner electronics. </li>
-</ol>
+<p>Open the lid of the Donington system, to expose the inner electronics. </p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>A thermal pad is positioned bewtween a heat spreader on the Jetson and the Donington system lid. Please ensure this is in position and undamaged after removing and replacing the lid.</p>
 </div>
-<ol>
-<li>Attached a USB cable between your host computer and J15 (Console) on the EchoPilot AI Board
-<a class="glightbox" href="../assets/usb-to-echopilot-carrier.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Console USB Connection" src="../assets/usb-to-echopilot-carrier.png" /></a></li>
-<li>In step 2, your host computer should have enumerated a virtual comm port. You will now need to find the name of the port.</li>
-</ol>
+<p>Attach a USB cable between your host computer and J15 (Console) on the EchoPilot AI Board
+<a class="glightbox" href="../assets/usb-to-echopilot-carrier.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Console USB Connection" src="../assets/usb-to-echopilot-carrier.png" /></a>
+In step 2, your host computer should have enumerated a virtual comm port. You will now need to find the name of the port.</p>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
 <p><strong>On Windows:</strong> Open Device Manager (Start → Control Panel → Hardware and Sound → Device Manager) Look in the Device Manager list, open the category "Ports", and note the COM port added <strong>USB Serial Port (COM?)</strong> (e.g., COM10).<br />
@@ -574,7 +585,7 @@
 <h2 id="accessing-the-jetson-via-network">Accessing the Jetson via network<a class="headerlink" href="#accessing-the-jetson-via-network" title="Permanent link">&para;</a></h2>
 <p>The Donington system has two 100Mbps Ethernet ports (ETH1 and ETH2). Upstream, these go to a network switch, so either one can be used to access the Jetson SOM. An M12 to RJ45 cable is required (e.g. <a href="https://www.digikey.com/en/products/detail/asi-ez/ASI-M12-RJ45-11101/14008395?s=N4IgTCBcDaIIIGUCSBaAsgRjCgSgKQBYBWFDMgBgwB0AXEAXQF8g">ASI-M12-RJ45-11101</a>)</p>
 <p>EchoMAV's standard provisioning sets the Jetson module to a static IP address provided on the label with the device. There is also an alias ip of 192.168.253.0 which can be used if you do not know the static IP. </p>
-<p>To gain console access to the Jetson, use <code>ssh</code> from a terminal session on the host computer:</p>
+<p>To gain console access to the Jetson over the network, use <code>ssh</code> from a terminal session on the host computer:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>ssh echopilot@IP_ADDRESS    #IP_ADDRESS obtained from the label on the device
 </code></pre></div>
 <div class="admonition note">
@@ -585,9 +596,14 @@
 <p class="admonition-title">Note</p>
 <p>If the label is damanged, or the static IP has been inadvertendly changes, you can use the configuration IP "backdoor" alias of <strong>192.168.154.0/24</strong> to access the system. Ensure your host system is in the 192.168.0.0/24 subnet (any valid IP address <strong>not equal</strong> to 192.168.154.0 will work). Please refer to the instructions above for how to change your host IP address.</p>
 </div>
-<h2 id="configuring-for-dhcp">Configuring for DHCP<a class="headerlink" href="#configuring-for-dhcp" title="Permanent link">&para;</a></h2>
+<h2 id="ip-configuration">IP Configuration<a class="headerlink" href="#ip-configuration" title="Permanent link">&para;</a></h2>
+<p><strong>The EchoPilot AI will be labeled from the factory with a static IP address in the 10.223.0.0/16 subnet such as 10.223.134.126 (for example only). If you do not know the IP address, you may be able to access the system using the backdoor/alias IP of 192.168.154.0/24</strong>. </p>
+<p>Duriong provisioning, the system's static IP address is calculated using the last two octets of the Jetson's <code>eth0</code> interface MAC address with a netmask of 255.255.0.0 (/16). For example, given the MAC address of 00:30:1A:4E:A4:3E, the last two octets 0xA4 and 0x3E are onverted from hex to decimal and then assigned as the last two octets of the IP address. In this example, this MAC address would correspond to 10.223.164.62/16 because 0xA4 = 164 and 0x3E = 62. This IP address is printed on the label from the factory.</p>
+<h3 id="changing-the-ip-address">Changing the IP Address<a class="headerlink" href="#changing-the-ip-address" title="Permanent link">&para;</a></h3>
+<p>To change the Jetson's IP address, first <a href="./#accessing-the-jetson-console">gain console access</a> via USB (internally in the box), then follow the steps below to change the configuration to either DHCP or a different static IP address. Making these changes when connected to the Jetson over the network will likely result in you losing your connection as the Ethernet interface goes up/down.</p>
+<h3 id="configuring-for-dhcp">Configuring for DHCP<a class="headerlink" href="#configuring-for-dhcp" title="Permanent link">&para;</a></h3>
 <p>If you wish to use <a href="https://en.wikipedia.org/wiki/Dynamic_Host_Configuration_Protocol">DHCP</a>, follow the instructions below:</p>
-<p>First <a href="#accessing-the-jetson-console">gain console access</a> via the USB connector. Once logged in via the console, modify the existing static connection (e.g. "static-eth0") to be DHCP:
+<p>Once logged in via the console, modify the existing static connection (e.g. "static-eth0") to be DHCP:
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>sudo nmcli con mod static-eth0 ipv4.method auto
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>sudo nmcli con mod static-eth0 ipv4.gateway &quot;&quot;
 <a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>sudo nmcli con mod static-eth0 ipv4.address &quot;&quot;
@@ -596,6 +612,57 @@
 </code></pre></div>
 If the network connection is plugged into a DHCP server, the system will now get an IP address. You can confirm with: 
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>ip addr
+</code></pre></div></p>
+<h3 id="configuring-or-changing-the-static-ip-address">Configuring or Changing the Static IP Address<a class="headerlink" href="#configuring-or-changing-the-static-ip-address" title="Permanent link">&para;</a></h3>
+<p>If you do not have a DHCP server, or you wish to assign a static IP address to the Jetson, follow the instructions below.</p>
+<p>First <a href="./#accessing-the-jetson-console">gain console access</a> via the USB connector. Once logged in via the console, delete the default connection, for example "Wired connection 1":
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>sudo nmcli c delete &quot;Wired connection 1&quot;
+</code></pre></div>
+Set up a static connection called <code>static-eth0</code> with an IP of 10.223.1.10, a netmask of 255.255.0.0 and a gateway of 10.223.1.1. The values are just examples, please adjust to the desired settings for your network.
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>sudo nmcli c add con-name static-eth0 ifname eth0 type ethernet ip4 10.223.1.10/16 gw4 10.223.1.1
+</code></pre></div>
+Bring up the new interface
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>sudo nmcli c up static-eth0
+</code></pre></div>
+To verify network connectivity, ping another device on the network, or to verify internet connectivity, ping a Google DNS server:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>ping 8.8.8.8
+</code></pre></div></p>
+<h3 id="other-networkmanager-tips-and-tricks">Other NetworkManager tips and tricks<a class="headerlink" href="#other-networkmanager-tips-and-tricks" title="Permanent link">&para;</a></h3>
+<p>Linux for Tegra uses networkmanager (<code>nmcli</code>) for its network interfaces. Below you will find a few commands for common network tasks. These examples are not intended for you to follow sequentially, these are common examples which will demonstrate most network configuration needs.</p>
+<p>Show connections:  <br />
+<code>nmcli con show</code></p>
+<p>Example: Delete the default connection ("Wired connection 1") and set up a static connection called <code>static-eth0</code> with an IP of 172.20.1.100, a netmask of 255.255.0.0 and a gateway of 172.20.2.100:  <br />
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>sudo nmcli c delete &quot;Wired connection 1&quot;
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>sudo nmcli c add con-name static-eth0 ifname eth0 type ethernet ip4 172.20.1.20/16 gw4 172.20.2.100
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>sudo nmcli c up static-eth0
+</code></pre></div></p>
+<p>Example: Change IP address of <code>static-eth0</code> connection to <code>192.168.1.4</code> with a 255.255.0.0 (/16) netmask:  <br />
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>sudo nmcli con mod static-eth0 ipv4.address 192.168.1.1/16
+</code></pre></div></p>
+<p>Example: Change the gateway of <code>static-eth0</code> connection to <code>192.168.1.1</code>:  <br />
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>sudo nmcli con mod static-eth0 ipv4.gateway 192.168.1.1
+</code></pre></div></p>
+<p>Example: Change the DNS of <code>static-eth0</code> connection to <code>8.8.8.8</code>:     <br />
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>sudo nmcli con mod static-eth0 ipv4.dns &quot;8.8.8.8&quot;
+</code></pre></div></p>
+<p>Example: Take down/up of <code>static-eth0</code>:    <br />
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>sudo nmcli con down static-eth0
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>sudo nmcli con up static-eth0
+</code></pre></div>
+Example: Delete the <code>static-eth0</code> connection:  <br />
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>sudo nmcli c delete &quot;static-eth0&quot;
+</code></pre></div></p>
+<p>Example: Add a new connection called <code>static-eth0</code> with IP <code>172.20.2.22/16</code> and gateway <code>172.20.2.100</code> on interface <code>eth0</code>:  <br />
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>sudo nmcli c add con-name static-eth0 ifname eth0 type ethernet ip4 172.20.2.22/16 gw4 172.20.2.100
+</code></pre></div></p>
+<p>Example: Add a persistent route so that multicast traffic to 224.x.x.x goes to the <code>static-eth0</code> connection:<br />
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>sudo nmcli con mod static-eth0 +ipv4.routes &quot;224.0.0.0/8&quot;
+</code></pre></div></p>
+<p>Example: Change the static-eth0 connection to remove static IP and enable DHCP (In this case, it would be clearer to delete the connection since it is named <code>static-eth0</code> and call it something else, but for edification:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>sudo nmcli con mod static-eth0 ipv4.address &quot;&quot;
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>sudo nmcli con mod static-eth0 ipv4.gateway &quot;&quot;
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>sudo nmcli con mod static-eth0 ipv4.method auto
+<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>sudo nmcli con reload static-eth0
 </code></pre></div></p>
 <h2 id="connecting-to-the-fmu-via-the-usb-connector">Connecting to the FMU via the USB connector<a class="headerlink" href="#connecting-to-the-fmu-via-the-usb-connector" title="Permanent link">&para;</a></h2>
 <ol>
@@ -607,10 +674,9 @@ If the network connection is plugged into a DHCP server, the system will now get
 <p><strong>QGroundControl:</strong> Will automatically connect.<br />
 <strong>Mission Planner:</strong> Select the appropriate COM port at the top right, 115200, then click CONNECT.</p>
 </div>
-<h2 id="ip-configuration">IP Configuration<a class="headerlink" href="#ip-configuration" title="Permanent link">&para;</a></h2>
-<h2 id="telemetry-routing">Telemetry Routing<a class="headerlink" href="#telemetry-routing" title="Permanent link">&para;</a></h2>
-<h2 id="obtaining-autopilot-data">Obtaining Autopilot Data<a class="headerlink" href="#obtaining-autopilot-data" title="Permanent link">&para;</a></h2>
 <h2 id="cellular-modem-installation">Cellular Modem Installation<a class="headerlink" href="#cellular-modem-installation" title="Permanent link">&para;</a></h2>
+<p>The Donington system is compatible with Sierra Wireless M.2 3052 modems, such as the EM9191. Using other modems may not work without configuration changes due to the way other modems detect the precense of SIM cards. </p>
+<p>When installling a cellular modem, care must be provided to also install the heatsink kit. This kit works by placing a thermal bad under the modem, which couples heat to a copper pour on the Doningnton carrier board. On the top side of the Donington carrier board, a heaetsink is placed using thermal conductive epoxy. Failure to properly heatsink the Cellular modem may result in throttling, especially during data uploads (such as video streaming).</p>
 
 
 
