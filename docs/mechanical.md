@@ -4,7 +4,7 @@
 
 ## STEP Files
 
-TBD
+Download [STEP File Here](assets/Donington.STEP)
 
 ## Vibration Isolation
 
