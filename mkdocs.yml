@@ -5,9 +5,9 @@ repo_name: echomav/donington_docs
 nav:
     - Overview: overview.md    
     - Quick Start: quickstart.md
+    - User Guide: userguide.md
     - Hardware Guide: hardware.md
     - Software Guide: software.md
-    - User Guide: userguide.md
     - Pinouts: electrical.md
     - Mechanical: mechanical.md
 theme:
