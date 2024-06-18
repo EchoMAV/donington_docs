@@ -8,7 +8,7 @@ We will be streaming telemetry over the network, so the first step is to configu
 
 ## Prerequisites
 
-You will need a Ground Control Software (GCS) solution installed on your host computer. Either [QGroundControl](https://docs.qgroundcontrol.com/master/en/getting_started/download_and_install.html) or [Mission Planner](https://ardupilot.org/planner/docs/mission-planner-installation.html) are recommended. Note that Mission Planner is only available for Windows, while QGroundControl is available for most hardware including Android, Linux, Windows, Mac, etc. Before proceeding, install one. If you don't have a preference, we prefer QGroundControl as it is more user friendly. Although be aware some advanced features or set up may require Mission Planner. 
+You will need a Ground Control Software (GCS) solution installed on your host computer. Either [QGroundControl](https://docs.qgroundcontrol.com/master/en/qgc-user-guide/getting_started/download_and_install.html) or [Mission Planner](https://ardupilot.org/planner/docs/mission-planner-installation.html) are recommended. Note that Mission Planner is only available for Windows, while QGroundControl is available for most hardware including Android, Linux, Windows, Mac, etc. Before proceeding, install one. If you don't have a preference, we prefer QGroundControl as it is more user friendly. Although be aware some advanced features or set up may require Mission Planner. 
 
 ## Quick Start Steps
 

@@ -20,7 +20,7 @@ In step 2, your host computer should have enumerated a virtual comm port. You wi
     **On Linux:** Run ```dmesg -w``` and then plug in unplug and replug in the USB cable. You should see the name of the device added, typically ```FTDI USB Serial device converter now attached to ttyUSB?``` (e.g., ttyUSB0). 
 Use a terminal program to connect to the Jetson's console at 115200 baud, 8N1. 
 !!! info
-    **On Windows:** We recommend [Putty](https://www.putty.org/) or [TeraTerm](https://osdn.net/projects/ttssh2/releases/).  
+    **On Windows:** We recommend [Putty](https://www.putty.org/) or [TeraTerm](https://teratermproject.github.io/index-en.html).  
     **On Linux:** We recommend Picocom. Install with ```sudo apt-get install picocom```. Use with ```picocom /dev/ttyUSB? -b 115200```. To exit picocom, use ```Ctrl-a Ctrl-x```.
 Power the Donington System 13-36VDC source capable of supplying up to **4A**.
 !!! warning
