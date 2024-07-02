@@ -547,13 +547,13 @@
 <h2 id="accessing-the-jetson-console">Accessing the Jetson console<a class="headerlink" href="#accessing-the-jetson-console" title="Permanent link">&para;</a></h2>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>Do not run the Jetson SOM without a heat sink. The lid of the Donington system is the primary heat sink, and running the Jetson with the lid off may result in shut down or throttling. If you need to run the system for a continued period of time with the lid removed, position a fan to move air over the heatspreader installed on the Jetson module.</p>
+<p>Do not run the Jetson SOM without a heat sink. The lid of the Donington system is the primary heat sink, and running the Jetson with the lid off may result in shut down or throttling. If you need to run the system for a continued period of time with the lid removed, position a fan to move air over the heat spreader installed on the Jetson module.</p>
 </div>
 <p>Open the lid of the Donington system, to expose the inner electronics. 
 <a class="glightbox" href="../assets/inside_box.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Inside Box" src="../assets/inside_box.png" /></a></p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>A thermal pad is positioned bewtween a heat spreader on the Jetson and the Donington system lid. Please ensure this is in position and undamaged after removing and replacing the lid.</p>
+<p>A thermal pad is positioned between a heat spreader on the Jetson and the Donington system lid. Please ensure this is in position and undamaged after removing and replacing the lid.</p>
 </div>
 <p>Attach a USB cable between your host computer and J15 (Console) on the EchoPilot AI Board
 <a class="glightbox" href="../assets/usb-to-echopilot-carrier.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Console USB Connection" src="../assets/usb-to-echopilot-carrier.png" /></a>
@@ -595,11 +595,11 @@ In step 2, your host computer should have enumerated a virtual comm port. You wi
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>If the label is damanged, or the static IP has been inadvertendly changes, you can use the configuration IP "backdoor" alias of <strong>192.168.154.0/24</strong> to access the system. Ensure your host system is in the 192.168.0.0/24 subnet (any valid IP address <strong>not equal</strong> to 192.168.154.0 will work). Please refer to the instructions above for how to change your host IP address.</p>
+<p>If the label is damaged, or the static IP has been inadvertently changes, you can use the configuration IP "backdoor" alias of <strong>192.168.154.0/24</strong> to access the system. Ensure your host system is in the 192.168.0.0/24 subnet (any valid IP address <strong>not equal</strong> to 192.168.154.0 will work). Please refer to the instructions above for how to change your host IP address.</p>
 </div>
 <h2 id="ip-configuration">IP Configuration<a class="headerlink" href="#ip-configuration" title="Permanent link">&para;</a></h2>
 <p><strong>The EchoPilot AI will be labeled from the factory with a static IP address in the 10.223.0.0/16 subnet such as 10.223.134.126 (for example only). If you do not know the IP address, you may be able to access the system using the backdoor/alias IP of 192.168.154.0/24</strong>. </p>
-<p>Duriong provisioning, the system's static IP address is calculated using the last two octets of the Jetson's <code>eth0</code> interface MAC address with a netmask of 255.255.0.0 (/16). For example, given the MAC address of 00:30:1A:4E:A4:3E, the last two octets 0xA4 and 0x3E are onverted from hex to decimal and then assigned as the last two octets of the IP address. In this example, this MAC address would correspond to 10.223.164.62/16 because 0xA4 = 164 and 0x3E = 62. This IP address is printed on the label from the factory.</p>
+<p>During provisioning, the system's static IP address is calculated using the last two octets of the Jetson's <code>eth0</code> interface MAC address with a netmask of 255.255.0.0 (/16). For example, given the MAC address of 00:30:1A:4E:A4:3E, the last two octets 0xA4 and 0x3E are converted from hex to decimal and then assigned as the last two octets of the IP address. In this example, this MAC address would correspond to 10.223.164.62/16 because 0xA4 = 164 and 0x3E = 62. This IP address is printed on the label from the factory.</p>
 <h3 id="changing-the-ip-address">Changing the IP Address<a class="headerlink" href="#changing-the-ip-address" title="Permanent link">&para;</a></h3>
 <p>To change the Jetson's IP address, first <a href="./#accessing-the-jetson-console">gain console access</a> via USB (internally in the box), then follow the steps below to change the configuration to either DHCP or a different static IP address. Making these changes when connected to the Jetson over the network will likely result in you losing your connection as the Ethernet interface goes up/down.</p>
 <h3 id="configuring-for-dhcp">Configuring for DHCP<a class="headerlink" href="#configuring-for-dhcp" title="Permanent link">&para;</a></h3>
@@ -659,7 +659,7 @@ Example: Delete the <code>static-eth0</code> connection:  <br />
 <p>Example: Add a persistent route so that multicast traffic to 224.x.x.x goes to the <code>static-eth0</code> connection:<br />
 <div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>sudo nmcli con mod static-eth0 +ipv4.routes &quot;224.0.0.0/8&quot;
 </code></pre></div></p>
-<p>Example: Change the static-eth0 connection to remove static IP and enable DHCP (In this case, it would be clearer to delete the connection since it is named <code>static-eth0</code> and call it something else, but for edification:
+<p>Example: Change the static-eth0 connection to remove static IP and enable DHCP. In this case, it would be clearer to delete the connection since it is named <code>static-eth0</code> and call it something else, but for edification:
 <div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>sudo nmcli con mod static-eth0 ipv4.address &quot;&quot;
 <a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>sudo nmcli con mod static-eth0 ipv4.gateway &quot;&quot;
 <a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>sudo nmcli con mod static-eth0 ipv4.method auto
@@ -676,8 +676,8 @@ Example: Delete the <code>static-eth0</code> connection:  <br />
 <strong>Mission Planner:</strong> Select the appropriate COM port at the top right, 115200, then click CONNECT.</p>
 </div>
 <h2 id="cellular-modem-installation">Cellular Modem Installation<a class="headerlink" href="#cellular-modem-installation" title="Permanent link">&para;</a></h2>
-<p>The Donington system is compatible with Sierra Wireless M.2 3052 modems, such as the EM9191. Using other modems may not work without configuration changes due to the way other modems detect the presense of SIM cards and other critical functionality. </p>
-<p>When installling a cellular modem, care must be provided to also install the heatsink kit. This kit works by placing a thermal bad under the modem, which couples heat to a copper pour on the Doningnton carrier board. On the top side of the Donington carrier board, a heaetsink is placed using thermal conductive epoxy. Failure to properly heatsink the Cellular modem may result in throttling, especially during data uploads (such as video streaming).</p>
+<p>The Donington system is compatible with Sierra Wireless M.2 3052 modems, such as the EM9191. Using other modems may not work without configuration changes due to the way other modems detect the presence of SIM cards and other critical functionality. </p>
+<p>When installing a cellular modem, care must be provided to also install the heat sink kit. This kit works by placing a thermal bad under the modem, which couples heat to a copper pour on the Donington carrier board. On the top side of the Donington carrier board, a heat sink is placed using thermal conductive epoxy. Failure to properly heat sink the Cellular modem may result in throttling, especially during data uploads (such as video streaming).</p>
 
 
 
