@@ -6,6 +6,8 @@ The flow chart below shows the overall hardware architecture. The custom carrier
 
 ![Flow Chart](assets/flow_chart.png)
 
+![Inside Box](assets/inside_box.png.png)
+
 ## Carrier Board Schematic
 
 The Donigton Carrier Board Schematic is [available to download.](assets/schematic.pdf) 

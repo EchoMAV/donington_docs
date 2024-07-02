@@ -7,6 +7,7 @@
     Do not run the Jetson SOM without a heat sink. The lid of the Donington system is the primary heat sink, and running the Jetson with the lid off may result in shut down or throttling. If you need to run the system for a continued period of time with the lid removed, position a fan to move air over the heatspreader installed on the Jetson module.
 
 Open the lid of the Donington system, to expose the inner electronics. 
+![Inside Box](assets/inside_box.png.png)
 
 !!! note
 
