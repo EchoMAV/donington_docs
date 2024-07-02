@@ -13,8 +13,9 @@ Open the lid of the Donington system, to expose the inner electronics.
 
     A thermal pad is positioned between a heat spreader on the Jetson and the Donington system lid. Please ensure this is in position and undamaged after removing and replacing the lid.
 
-Attach a USB cable between your host computer and J15 (Console) on the EchoPilot AI Board
+Attach a USB cable between your host computer and J15 (Console) on the EchoPilot AI Board. A USB-C right angle adapter may be useful. Such adapters are included with the hardware or can be obtained [elsewhere](https://a.co/d/0i08W69A).
 ![Console USB Connection](assets/usb-to-echopilot-carrier.png)
+
 In step 2, your host computer should have enumerated a virtual comm port. You will now need to find the name of the port.
 !!! info
     **On Windows:** Open Device Manager (Start → Control Panel → Hardware and Sound → Device Manager) Look in the Device Manager list, open the category "Ports", and note the COM port added **USB Serial Port (COM?)** (e.g., COM10).  
