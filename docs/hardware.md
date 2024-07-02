@@ -1,8 +1,8 @@
 The Donington system uses the EchoMAV [EchoPilot AI](https://echomav.com/product/echopilot-ai/) combined with a customized carrier board.
 
-To fill in gaps not covered in this documentaiton, please cross reference the [EchoPilot AI Documentation](https://echomav.github.io/docs/latest/echopilot_ai/). 
+To fill in gaps not covered in this documentation, please cross reference the [EchoPilot AI Documentation](https://echomav.github.io/docs/latest/echopilot_ai/). 
 
-The flow chart below shows the overall hardware architecture. The custom carrier board described below mates to the EchoPilotAI's board to board connectors, and provided Donington-specific functionality. Specifially, the Donington carrier board provides two Septentrio GNSS units, a RS-422 level shifter for an external INS system, two FTDI serial converters, power subsystems and connectors not found on EchoMAV's standard commercial carrier board. The system also includes a ruggideized aluminum enclosure, passive heat dissipation, IP67-design, and industrial M12 connectors.
+The flow chart below shows the overall hardware architecture. The custom carrier board described below mates to the EchoPilotAI's board to board connectors, and provided Donington-specific functionality. Specifically, the Donington carrier board provides two Septentrio GNSS units, a RS-422 level shifter for an external INS system, two FTDI serial converters, power subsystems and connectors not found on EchoMAV's standard commercial carrier board. The system also includes a ruggedize aluminum enclosure, passive heat dissipation, IP67-design, and industrial M12 connectors.
 
 ![Flow Chart](assets/flow_chart.png)
 
@@ -10,11 +10,11 @@ The flow chart below shows the overall hardware architecture. The custom carrier
 
 ## Carrier Board Schematic
 
-The Donigton Carrier Board Schematic is [available to download.](assets/schematic.pdf) 
+The Donington Carrier Board Schematic is [available to download.](assets/schematic.pdf) 
 
 ## FMU Ports
 
-The Autopilot system (also referred to as Flight Manamgenent Unit (FMU)) is based on the open-hardware Pixhawk design running an STM32H743 microcontroller. The peripherals for this device are connected via I2C, SPI, CAN and UART ports. The table below identifies how each peripheral interfaces is used.
+The Autopilot system (also referred to as Flight Management Unit (FMU)) is based on the open-hardware Pixhawk design running an STM32H743 microcontroller. The peripherals for this device are connected via I2C, SPI, CAN and UART ports. The table below identifies how each peripheral interfaces is used.
 
 Port | Use | Connector Assignement
 ------------ | ------------- | ------------ 

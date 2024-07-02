@@ -4,14 +4,14 @@
 
 !!! WARNING
 
-    Do not run the Jetson SOM without a heat sink. The lid of the Donington system is the primary heat sink, and running the Jetson with the lid off may result in shut down or throttling. If you need to run the system for a continued period of time with the lid removed, position a fan to move air over the heatspreader installed on the Jetson module.
+    Do not run the Jetson SOM without a heat sink. The lid of the Donington system is the primary heat sink, and running the Jetson with the lid off may result in shut down or throttling. If you need to run the system for a continued period of time with the lid removed, position a fan to move air over the heat spreader installed on the Jetson module.
 
 Open the lid of the Donington system, to expose the inner electronics. 
 ![Inside Box](assets/inside_box.png)
 
 !!! note
 
-    A thermal pad is positioned bewtween a heat spreader on the Jetson and the Donington system lid. Please ensure this is in position and undamaged after removing and replacing the lid.
+    A thermal pad is positioned between a heat spreader on the Jetson and the Donington system lid. Please ensure this is in position and undamaged after removing and replacing the lid.
 
 Attach a USB cable between your host computer and J15 (Console) on the EchoPilot AI Board
 ![Console USB Connection](assets/usb-to-echopilot-carrier.png)
@@ -48,13 +48,13 @@ ssh echopilot@IP_ADDRESS    #IP_ADDRESS obtained from the label on the device
 
 
 !!! note
-    If the label is damanged, or the static IP has been inadvertendly changes, you can use the configuration IP "backdoor" alias of __192.168.154.0/24__ to access the system. Ensure your host system is in the 192.168.0.0/24 subnet (any valid IP address __not equal__ to 192.168.154.0 will work). Please refer to the instructions above for how to change your host IP address.
+    If the label is damaged, or the static IP has been inadvertently changes, you can use the configuration IP "backdoor" alias of __192.168.154.0/24__ to access the system. Ensure your host system is in the 192.168.0.0/24 subnet (any valid IP address __not equal__ to 192.168.154.0 will work). Please refer to the instructions above for how to change your host IP address.
 
 ## IP Configuration
 
 __The EchoPilot AI will be labeled from the factory with a static IP address in the 10.223.0.0/16 subnet such as 10.223.134.126 (for example only). If you do not know the IP address, you may be able to access the system using the backdoor/alias IP of 192.168.154.0/24__. 
 
-Duriong provisioning, the system's static IP address is calculated using the last two octets of the Jetson's `eth0` interface MAC address with a netmask of 255.255.0.0 (/16). For example, given the MAC address of 00:30:1A:4E:A4:3E, the last two octets 0xA4 and 0x3E are onverted from hex to decimal and then assigned as the last two octets of the IP address. In this example, this MAC address would correspond to 10.223.164.62/16 because 0xA4 = 164 and 0x3E = 62. This IP address is printed on the label from the factory.
+During provisioning, the system's static IP address is calculated using the last two octets of the Jetson's `eth0` interface MAC address with a netmask of 255.255.0.0 (/16). For example, given the MAC address of 00:30:1A:4E:A4:3E, the last two octets 0xA4 and 0x3E are converted from hex to decimal and then assigned as the last two octets of the IP address. In this example, this MAC address would correspond to 10.223.164.62/16 because 0xA4 = 164 and 0x3E = 62. This IP address is printed on the label from the factory.
 
 ### Changing the IP Address
 
@@ -146,7 +146,7 @@ Example: Add a persistent route so that multicast traffic to 224.x.x.x goes to t
 sudo nmcli con mod static-eth0 +ipv4.routes "224.0.0.0/8"
 ```
 
-Example: Change the static-eth0 connection to remove static IP and enable DHCP (In this case, it would be clearer to delete the connection since it is named `static-eth0` and call it something else, but for edification:
+Example: Change the static-eth0 connection to remove static IP and enable DHCP. In this case, it would be clearer to delete the connection since it is named `static-eth0` and call it something else, but for edification:
 ```
 sudo nmcli con mod static-eth0 ipv4.address ""
 sudo nmcli con mod static-eth0 ipv4.gateway ""
@@ -164,6 +164,6 @@ sudo nmcli con reload static-eth0
 
 ## Cellular Modem Installation
 
-The Donington system is compatible with Sierra Wireless M.2 3052 modems, such as the EM9191. Using other modems may not work without configuration changes due to the way other modems detect the presense of SIM cards and other critical functionality. 
+The Donington system is compatible with Sierra Wireless M.2 3052 modems, such as the EM9191. Using other modems may not work without configuration changes due to the way other modems detect the presence of SIM cards and other critical functionality. 
 
-When installling a cellular modem, care must be provided to also install the heatsink kit. This kit works by placing a thermal bad under the modem, which couples heat to a copper pour on the Doningnton carrier board. On the top side of the Donington carrier board, a heaetsink is placed using thermal conductive epoxy. Failure to properly heatsink the Cellular modem may result in throttling, especially during data uploads (such as video streaming).
+When installing a cellular modem, care must be provided to also install the heat sink kit. This kit works by placing a thermal bad under the modem, which couples heat to a copper pour on the Donington carrier board. On the top side of the Donington carrier board, a heat sink is placed using thermal conductive epoxy. Failure to properly heat sink the Cellular modem may result in throttling, especially during data uploads (such as video streaming).

@@ -4,7 +4,7 @@ The goal of this quick start guide is to power the Donington module and get a te
 
 We will be streaming telemetry over the network, so the first step is to configure your host computer so that is is compatible with the default networking settings of the Donington system. To do so, we will be setting your host IP address to __10.223.1.10/16__.
 !!! info
-    By default, the Donington system streams telemetry to 10.223.1.10:14550 using UDP. The instructions below will walk you through setting your host computer to this IP address and installing a Ground Control Software pacakge.
+    By default, the Donington system streams telemetry to 10.223.1.10:14550 using UDP. The instructions below will walk you through setting your host computer to this IP address and installing a Ground Control Software package.
 
 ## Prerequisites
 
@@ -47,7 +47,7 @@ First configure your host computer to have an IP of 10.223.1.10/16 using the ins
 
 1. Plug in an RJ45 to M12 cable assembly between the Donington system and your host computer (use either ETH port).
 2. Power on the Donington system using a 13-36VDC power supply and M12 power cable assembly provided (ensure the power source can supply 4A). The green PWR LED should light up.
-3. Open your GCS applicaiton on the host computer. If a firewall warning is provided, ensure you __accept__ the connection.
-4. Once the Donington system is booted (approximatly 60s), telemetry will start to flow from the Donington system to 10.223.1.10:14550 via UDP. If you correctly followed the steps above, you should automatically get a connection over the network.
+3. Open your GCS application on the host computer. If a firewall warning is provided, ensure you __accept__ the connection.
+4. Once the Donington system is booted (approximately 60s), telemetry will start to flow from the Donington system to 10.223.1.10:14550 via UDP. If you correctly followed the steps above, you should automatically get a connection over the network.
 
 ![QGroundControl](assets/qgcs.png)
