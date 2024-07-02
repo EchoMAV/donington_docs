@@ -7,7 +7,7 @@
     Do not run the Jetson SOM without a heat sink. The lid of the Donington system is the primary heat sink, and running the Jetson with the lid off may result in shut down or throttling. If you need to run the system for a continued period of time with the lid removed, position a fan to move air over the heatspreader installed on the Jetson module.
 
 Open the lid of the Donington system, to expose the inner electronics. 
-![Inside Box](assets/inside_box.png.png)
+![Inside Box](assets/inside_box.png)
 
 !!! note
 
@@ -164,6 +164,6 @@ sudo nmcli con reload static-eth0
 
 ## Cellular Modem Installation
 
-The Donington system is compatible with Sierra Wireless M.2 3052 modems, such as the EM9191. Using other modems may not work without configuration changes due to the way other modems detect the precense of SIM cards. 
+The Donington system is compatible with Sierra Wireless M.2 3052 modems, such as the EM9191. Using other modems may not work without configuration changes due to the way other modems detect the presense of SIM cards and other critical functionality. 
 
 When installling a cellular modem, care must be provided to also install the heatsink kit. This kit works by placing a thermal bad under the modem, which couples heat to a copper pour on the Doningnton carrier board. On the top side of the Donington carrier board, a heaetsink is placed using thermal conductive epoxy. Failure to properly heatsink the Cellular modem may result in throttling, especially during data uploads (such as video streaming).
