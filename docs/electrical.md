@@ -23,7 +23,7 @@ ANALOG IN | 5 | M12, D-Code Female   | T4141512051-000     | Custom |
 
 Connector   | Pins | Type | Part Number | Mating Cable Assembly | Notes
 ------------ | ------------- | ------------- | ------------- | ------------- | ------------- 
-ETH       | 4 | M12, D-Code Male  |  T4141512041-000  | ASI-M12-RJ45-11101 |  100 Mbps Ethernet to Jetson      
+ETH       | 4 | M12, D-Code Female  |  T4141512041-000  | ASI-M12-RJ45-11101 |  100 Mbps Ethernet to Jetson      
 ETH       | 4 | M12, D-Code Female | T4141512041-000 | ASI-M12-RJ45-11101 | 100 Mbps Ethernet to Jetson             
 USB       | 12 | M12, A-Code Female | T4141012121-000  | Custom | USB 3 SS to Jetson    
 USB       | 12 | M12, A-Code Female    | T4141012121-000 | Custom | USB 3 SS to Jetson
