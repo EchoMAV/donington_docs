@@ -599,8 +599,8 @@ At this point, you can install your own application, which opens <code>/dev/ttyT
 <li>Finish &gt; OK</li>
 <li>A popup menu should appear at the bottom right, click Save to ensure these settings are applied for future boots.</li>
 </ol>
-<p>To ensure the settings were applied, we recommend power cycling, then reconnecting to the GNSS unit, navivate to NMEA/SBF Out tab and ensure the output you set up in the previous step has persisted across a power cycle.</p>
-<p>Repeat the settings for COM2, configuring the stream type desired for connection to the Jetson.</p>
+<p>To ensure the settings were applied, we recommend power cycling, then reconnecting to the GNSS unit, navigate to NMEA/SBF Out tab and ensure the output you set up in the previous step has persisted across a power cycle.</p>
+<p>Repeat the settings for COM2, configuring the stream type desired for software which may be running on the Jetson (e.g. NMEA GLL and GSA messages are the most common).</p>
 <p>Please find information <a href="https://customersupport.septentrio.com/s/article/How-to-integrate-latest-Septentrio-GNSS-receivers-with-Ardupilot-using-Pixhawk-standard-boards">here</a> for additional info about configuring Septentrio devices with ArduPilot.</p>
 <h2 id="unique-board-identifier">Unique Board Identifier<a class="headerlink" href="#unique-board-identifier" title="Permanent link">&para;</a></h2>
 <p>Each EchoPilot AI includes an AT24CS01-STUM unique ID EEPROM attached to the Jetson I2C 1 port at address 0x58. This can be used to obtain a unique 128-bit identifier (serial number) for your board. </p>
