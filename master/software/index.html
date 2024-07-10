@@ -586,6 +586,12 @@ At this point, you can install your own application, which opens <code>/dev/ttyT
 <ol>
 <li>Apply power to the Donington system, open the lid, and connect to the USB configuration port for the GNSS port you wish to configure.</li>
 <li>Many USB devices will enumerate, including one which should be a RNDIS network interface.</li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>On Windows, you will need to install the driver, which will be available in the mass storage device which will enumerate in the step above.</p>
+</div>
+<ol>
 <li>Open a web browser at 192.168.3.1 to access the Septentrio configuration UI.</li>
 <li>Go to the NMEA/SBF Out tab</li>
 <li>Select +New SBF Stream &gt; Serial Port &gt; COM1</li>
