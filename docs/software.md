@@ -92,10 +92,9 @@ At this point, you can install your own application, which opens ```/dev/ttyTHS0
 
 The Septentrio X5 and H units must be configured to output an SBF stream on COM1 before they will work with ArduPilot. The instructions to do so are below:
 
-1. Apply power to the Donington system, open the lid, and connect to the USB configuration port for the GNSS port you wish to configure.
-
 ![Inside Box](assets/inside_box.png)
 
+1. Apply power to the Donington system, open the lid, and connect to the USB configuration port for the GNSS port you wish to configure.
 2. Many USB devices will enumerate, including one which should be a RNDIS network interface.
 
 !!! note
