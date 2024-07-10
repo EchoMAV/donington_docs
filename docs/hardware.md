@@ -78,11 +78,11 @@ The Donington system contains two Septentrio GNSS systems (X-5 and H). The table
 
 GNSS   | Port    | Connection      
 ------------ | ------------- | ------------ 
-Mosaic X5       | Serial 1 (B1/D1)         |  Autopilot SERIAL3 (115 kpbs)
-Mosaic X5       | Serial 2 (F1/H1)        |  Jetson via USB FTDI (e.g. /dev/ttyUSBx)
+Mosaic X5       | COM 1 (B1/D1)         |  Autopilot SERIAL3 (115 kpbs)
+Mosaic X5       | COM 2 (F1/H1)        |  Jetson via USB FTDI (e.g. /dev/ttyUSBx)
 Mosaic X5   |   USB | USB-C port inside enclosure
-Mosaic H       | Serial 1 (B1/D1)         |  Autopilot SERIAL1 (115 kpbs)
-Mosaic H       | Serial 2 (F1/H1)        |  Jetson via USB FTDI (e.g. /dev/ttyUSBx)
+Mosaic H       | COM 1 (B1/D1)         |  Autopilot SERIAL1 (115 kpbs)
+Mosaic H       | COM 2 (F1/H1)        |  Jetson via USB FTDI (e.g. /dev/ttyUSBx)
 Mosaic H   |   USB | USB-C port inside enclosure 
 
 Please refer to the [schematic for more information](assets/schematic.pdf).

@@ -90,6 +90,19 @@ At this point, you can install your own application, which opens ```/dev/ttyTHS0
 
 ## Aditional information related to Septentrio GNSS
 
+The Septentrio X5 and H units must be configured to output an SBF stream on COM1 before they will work with ArduPilot. The instructions to do so are below:
+
+1. Apply power to the Donington system, open the lid, and connect to the USB configuration port for the GNSS port you wish to configure.
+2. Many USB devices will enumerate, including one which should be a RNDIS network interface.
+3. Open a web browser at 192.168.3.1 to access the Septentrio configuration UI.
+4. Go to the NMEA/SBF Out tab
+5. Select +New SBF Stream > Serial Port > COM1
+6. Select Detailed Selection and ensure the following messages are selected: PVTGeodetic, VelCovGeodetic, DOP and ReceiverStatus
+7. Finish > OK
+8. A popup menu should appear at the bottom right, click Save to ensure these settings are applied for future boots.
+
+To ensure the settings were applied, we recommend power cycling, then reconnecting to the GNSS unit, navivate to NMEA/SBF Out tab and ensure the output you set up in the previous step has persisted across a power cycle.
+
 Please find information [here](https://customersupport.septentrio.com/s/article/How-to-integrate-latest-Septentrio-GNSS-receivers-with-Ardupilot-using-Pixhawk-standard-boards) for additional info about configuring Septentrio devices with ArduPilot.
 
 ## Unique Board Identifier
