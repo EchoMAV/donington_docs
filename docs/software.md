@@ -105,9 +105,9 @@ The Septentrio X5 and H units must be configured to output an SBF stream on COM1
 7. Finish > OK
 8. A popup menu should appear at the bottom right, click Save to ensure these settings are applied for future boots.
 
-To ensure the settings were applied, we recommend power cycling, then reconnecting to the GNSS unit, navivate to NMEA/SBF Out tab and ensure the output you set up in the previous step has persisted across a power cycle.
+To ensure the settings were applied, we recommend power cycling, then reconnecting to the GNSS unit, navigate to NMEA/SBF Out tab and ensure the output you set up in the previous step has persisted across a power cycle.
 
-Repeat the settings for COM2, configuring the stream type desired for connection to the Jetson.
+Repeat the settings for COM2, configuring the stream type desired for software which may be running on the Jetson (e.g. NMEA GLL and GSA messages are the most common).
 
 Please find information [here](https://customersupport.septentrio.com/s/article/How-to-integrate-latest-Septentrio-GNSS-receivers-with-Ardupilot-using-Pixhawk-standard-boards) for additional info about configuring Septentrio devices with ArduPilot.
 
