@@ -17,9 +17,10 @@ ANALOG IN | 5 | M12, D-Code Female   | T4141512051-000     | Custom |
 
 </center>
 
-![Short Side Comms](assets/pinout_short.png)
+![Short Side Comms](assets/pinout_short2.png)
 
 <center>
+
 !!! note
     Serial Number 0001 hardware uses different USB pinout, please contact EchoMAV if using Serial Number 0001.
 
