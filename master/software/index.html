@@ -582,6 +582,18 @@
 </code></pre></div>
 At this point, you can install your own application, which opens <code>/dev/ttyTHS0</code> (on most Jetson systems) at 500,000 kbps and uses a <a href="https://mavlink.io/en/getting_started/use_libraries.html">mavlink parser library</a> to parse the byte stream.</p>
 <h2 id="aditional-information-related-to-septentrio-gnss">Aditional information related to Septentrio GNSS<a class="headerlink" href="#aditional-information-related-to-septentrio-gnss" title="Permanent link">&para;</a></h2>
+<p>The Septentrio X5 and H units must be configured to output an SBF stream on COM1 before they will work with ArduPilot. The instructions to do so are below:</p>
+<ol>
+<li>Apply power to the Donington system, open the lid, and connect to the USB configuration port for the GNSS port you wish to configure.</li>
+<li>Many USB devices will enumerate, including one which should be a RNDIS network interface.</li>
+<li>Open a web browser at 192.168.3.1 to access the Septentrio configuration UI.</li>
+<li>Go to the NMEA/SBF Out tab</li>
+<li>Select +New SBF Stream &gt; Serial Port &gt; COM1</li>
+<li>Select Detailed Selection and ensure the following messages are selected: PVTGeodetic, VelCovGeodetic, DOP and ReceiverStatus</li>
+<li>Finish &gt; OK</li>
+<li>A popup menu should appear at the bottom right, click Save to ensure these settings are applied for future boots.</li>
+</ol>
+<p>To ensure the settings were applied, we recommend power cycling, then reconnecting to the GNSS unit, navivate to NMEA/SBF Out tab and ensure the output you set up in the previous step has persisted across a power cycle.</p>
 <p>Please find information <a href="https://customersupport.septentrio.com/s/article/How-to-integrate-latest-Septentrio-GNSS-receivers-with-Ardupilot-using-Pixhawk-standard-boards">here</a> for additional info about configuring Septentrio devices with ArduPilot.</p>
 <h2 id="unique-board-identifier">Unique Board Identifier<a class="headerlink" href="#unique-board-identifier" title="Permanent link">&para;</a></h2>
 <p>Each EchoPilot AI includes an AT24CS01-STUM unique ID EEPROM attached to the Jetson I2C 1 port at address 0x58. This can be used to obtain a unique 128-bit identifier (serial number) for your board. </p>
