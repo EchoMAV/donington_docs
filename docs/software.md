@@ -99,7 +99,7 @@ The Septentrio X5 and H units must be configured to output an SBF stream on COM1
 2. Many USB devices will enumerate, including one which should be a RNDIS network interface.
 
 !!! note
-    On Windows, you will need to install the driver before the RNDIS network device will function. The installer is located in the `driver` will be available in the mass storage device which will enumerate in the step above.
+    On Windows, you will need to install the driver before the RNDIS network device will function. The installer is located in the `driver` folder which will be available in the mass storage device which will enumerate in the step above.
 
 3. Open a web browser at 192.168.3.1 to access the Septentrio configuration UI.
 4. Go to the NMEA/SBF Out tab
