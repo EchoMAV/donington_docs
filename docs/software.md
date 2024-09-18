@@ -88,7 +88,7 @@ sudo systemctl disable mavlink-router
 At this point, you can install your own application, which opens ```/dev/ttyTHS0``` (on most Jetson systems) at 500,000 kbps and uses a [mavlink parser library](https://mavlink.io/en/getting_started/use_libraries.html) to parse the byte stream.
 
 
-## Aditional information related to Septentrio GNSS
+## Additional information related to Septentrio GNSS
 
 The Septentrio X5 and H units must be configured to output an SBF stream on COM1 before they will work with ArduPilot. The instructions to do so are below:
 
@@ -105,14 +105,17 @@ The Septentrio X5 and H units must be configured to output an SBF stream on COM1
 4. Go to the __NMEA/SBF__ Out tab
 5. Select __+New SBF Stream__ > __Serial Port__ > __COM1__
 6. Set interval to __100ms__.
-7. Check __Position__ and __Status__ categories
+7. Check __PVTGeod__, __PVTExtra__ and __Status__ categories
 8. Select __Finish__ > __OK__
 9. Navigate to the __Admin__ tab > __Configurations__
 10. Under __Copy Configuration File__ set the __Source: Current__ and __Target: Boot__ and press __OK__. This will save the current configuration so it is applied again at the next boot.
 
-To ensure the settings were applied, we recommend power cycling, then reconnecting to the GNSS unit, navigate to NMEA/SBF Out tab and ensure the output you set up in the previous step has persisted across a power cycle.
+Optionally (but recommend while you are configuring the units anyway) you may enable an __NMEA__ output on __COM2__, which would be used by future applications running on the Jetson and need access to the GNSS data. Enable __NMEA GLL__ and __GSA__ messages at an output rate of __1 Hz__ for both the X-5 and the H GNSS units.
 
-At this time, we recommend repeating the settings for COM2, configuring the stream type desired for software which may be running on the Jetson. However, it is more typical for software to ingest __NMEA GLL__ and __GSA__ messages so we recommend using these messages for the output on COM2 for both the X-5 and H.
+!!! important
+To ensure the settings were applied, we recommend power cycling, then reconnecting to the GNSS unit via USB and the web browser, navigate to NMEA/SBF Out tab and ensure the output you set up in the previous steps has persisted across a power cycle.
+
+
 
 ### Using the Septentrio H for both GNSS position and heading.
 
