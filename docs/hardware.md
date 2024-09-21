@@ -126,7 +126,7 @@ SLEEP/WAK        | SLEEP/WAKE (SOM 240)       |  3.3V | Control Jetson Power Sta
 
 The Pulse Width Modulated (PWM) outputs are at 3.3VDC. They update every 2.5ms and can be set from 800-2200uS pulse widths (e.g., via ArduPilot).
 
-## GNSS AntennA
+## GNSS Antennas
 
 The electrical specifications for the 3x GNSS antennas are found below:  
 
