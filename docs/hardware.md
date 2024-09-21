@@ -86,3 +86,54 @@ Mosaic H       | COM 2 (F1/H1)        |  Jetson via USB FTDI (e.g. /dev/ttyUSBx)
 Mosaic H   |   USB | USB-C port inside enclosure 
 
 Please refer to the [schematic for more information](assets/schematic.pdf).
+
+## Analog Inputs
+
+The maximum voltage allowed on ADC1, ADC2, ADC3 and ADC4 is 15VDC. Voltage applied to this pin is scaled by 0.217, such that a maximum of 15V applied to these pins presents at ~3.3V maximum to the ADC. Each ADC input is ESD protected and buffered with a MCP6002 buffer. See the carrier board schematic for more information. The ADC mapping is shown below.
+
+
+ADC Input   | STM32 Pin    | Ardupilot GPIO Number      
+------------ | ------------- | ------------ 
+ADC1      | PA1        |  17
+ADC2       | PA2       |  14
+ADC3        |   PA3 | 15
+ADC4       | PC4        |  4
+
+## NMEA2K 
+
+NMEA2K (standardized as IEC 61162-3,) is a plug-and-play communications standard used for connecting marine sensors and display units within ships and boats. Communication runs at 250 kilobits-per-second and allows any sensor to talk to any display unit or other device compatible with NMEA 2000 protocols.
+
+The NMEA2K connector provided on the Donington system uses the Micro C (Female) connector standard.  
+
+The 12V output on the NMEA2K connector is limited to 2A.
+
+## Iridium 
+
+The Iridium connector uses several GPIO pins which are mapped back to the Jetson. The 5V output provided on this connector is limited to 500mA.
+
+Pin   | Jetson Pin    | Voltage | Function     
+------------ | ------------- | ------------ 
+Irid TX      | UART0_TXD (SOM 99)   | 3.3V |  UART TX from Jetson
+Irid RX       | UART0_RXD (SOM 101)         | 3.3V | UART RX to Jetson
+Irid NA        |   NA      | NA | Network Available (reserved, not currently used)
+Irid Ring        | GPIO12 (SOM 218)        |  3.3V | Iridium Ring signal
+Irid On        | NA        |  NA | Iridium modem control (reserved, not current used)
+GPIO1        |  I2S0_FS (SOM 197)    |  3.3V | Spare GPIO for user applications
+nMOD_SLP        | nMOD_SLEEP (SOM 178)      |  3.3V | Low Power/ Sleep Mode input
+SLEEP/WAK        | SLEEP/WAKE (SOM 240)       |  3.3V | Control Jetson Power State
+
+## PWM Ouputs
+
+The Pulse Width Modulated (PWM) outputs are at 3.3VDC. They update every 2.5ms and can be set from 800-2200uS pulse widths (e.g., via ArduPilot).
+
+## GNSS AntennA
+
+The electrical specifications for the 3x GNSS antennas are found below:  
+
+DC bias: +5V  
+Equivalent DC series impedance at input: 2.5 Ohms typical, 3.0 Ohms max    
+Antenna current limit: 150mA    
+ANT_1 pre-amplification gain range: Single-antenna modules: 15-50 dB (AGC gain: 15-50dB), Dual-antenna modules: 15-35dB (AGC gain: 30-50dB)
+ANT_1 receiver noise:8.5 dB with 15 dB net pre-amplification, 18 dB with 25 dB net pre-amplification, 26 dB with 35 dB net pre-amplification, 35 dB with 45 dB net pre-amplification  
+RF nominal input impedance: 50 Ohms
+VSWR: < 2:1 in all the supported bands  

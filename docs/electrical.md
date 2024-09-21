@@ -5,15 +5,15 @@ The PWR LED on the left side indicates that the system is powered and running. T
 ![Long Side Connectors](assets/pinout_long.png)
 <center>
 
-Connector   | Pins | Type | Part Number | Mating Cable Assembly | Notes
+Connector   | Pins | Type | Part Number | Mating Cable/Connector Assembly | Notes
 ------------ | ------------- | ------------- | ------------- | ------------- | ------------- 
 PWR       | 4 | M12, A-Code Male  | T4140012041-000  | Tensility 10-03805 |  13-36VDC, 4A + supply        
-PWM       | 12 | M12, A-Code Female | T4141012121-000  | Custom |          
-INS       | 8 | M12, A-Code Female | T4141012081-000  | Custom |  
-IRIDIUM   | 12 | M12, A-Code Female    | T4141012121-000 | Custom | 
-FMU CAN   | 4 | M12, A-Code Female  | T4141012041-000 | Custom | 
-NMEA2K    | 5 | M12, A-Code Female   | T4141012051-000  | Custom |   
-ANALOG IN | 5 | M12, D-Code Female   | T4141512051-000     | Custom |  
+PWM       | 12 | M12, A-Code Female | T4141012121-000  | 6-2271110-2 |          
+INS       | 8 | M12, A-Code Female | T4141012081-000  | T4111002081-000 |  
+IRIDIUM   | 12 | M12, A-Code Female    | T4141012121-000 | 6-2271110-2 | 
+FMU CAN   | 4 | M12, A-Code Female  | T4141012041-000 | T4111002041-000 | 
+NMEA2K    | 5 | M12, A-Code Female   | T4141012051-000  | T4111002051-000 |   
+ANALOG IN | 5 | M12, D-Code Female   | T4141512051-000     | T4111501051-000 |  
 
 </center>
 
@@ -24,12 +24,12 @@ ANALOG IN | 5 | M12, D-Code Female   | T4141512051-000     | Custom |
 
 <center>
 
-Connector   | Pins | Type | Part Number | Mating Cable Assembly | Notes
+Connector   | Pins | Type | Part Number | Mating Cable/Connector Assembly | Notes
 ------------ | ------------- | ------------- | ------------- | ------------- | ------------- 
 ETH       | 4 | M12, D-Code Female  |  T4141512041-000  | ASI-M12-RJ45-11101 |  100 Mbps Ethernet to Jetson      
 ETH       | 4 | M12, D-Code Female | T4141512041-000 | ASI-M12-RJ45-11101 | 100 Mbps Ethernet to Jetson             
-USB       | 12 | M12, A-Code Female | T4141012121-000  | Custom | USB 3 SS to Jetson    
-USB       | 12 | M12, A-Code Female    | T4141012121-000 | Custom | USB 3 SS to Jetson
+USB       | 12 | M12, A-Code Female | T4141012121-000  | 6-2271110-2 | USB 3 SS to Jetson    
+USB       | 12 | M12, A-Code Female    | T4141012121-000 | 6-2271110-2 | USB 3 SS to Jetson
 
 </center>
 
