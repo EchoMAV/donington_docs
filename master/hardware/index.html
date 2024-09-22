@@ -441,9 +441,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#pwm-ouputs" class="md-nav__link">
+  <a href="#ins" class="md-nav__link">
     <span class="md-ellipsis">
-      PWM Ouputs
+      INS
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pwm-outputs" class="md-nav__link">
+    <span class="md-ellipsis">
+      PWM Outputs
     </span>
   </a>
   
@@ -844,17 +853,81 @@
 <p>The 12V output on the NMEA2K connector is limited to 2A.</p>
 <h2 id="iridium">Iridium<a class="headerlink" href="#iridium" title="Permanent link">&para;</a></h2>
 <p>The Iridium connector uses several GPIO pins which are mapped back to the Jetson. The 5V output provided on this connector is limited to 500mA.</p>
-<p>Pin   | Jetson Pin    | Voltage | Function   <br />
------------- | ------------- | ------------ 
-Irid TX      | UART0_TXD (SOM 99)   | 3.3V |  UART TX from Jetson
-Irid RX       | UART0_RXD (SOM 101)         | 3.3V | UART RX to Jetson
-Irid NA        |   NA      | NA | Network Available (reserved, not currently used)
-Irid Ring        | GPIO12 (SOM 218)        |  3.3V | Iridium Ring signal
-Irid On        | NA        |  NA | Iridium modem control (reserved, not current used)
-GPIO1        |  I2S0_FS (SOM 197)    |  3.3V | Spare GPIO for user applications
-nMOD_SLP        | nMOD_SLEEP (SOM 178)      |  3.3V | Low Power/ Sleep Mode input
-SLEEP/WAK        | SLEEP/WAKE (SOM 240)       |  3.3V | Control Jetson Power State</p>
-<h2 id="pwm-ouputs">PWM Ouputs<a class="headerlink" href="#pwm-ouputs" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Pin</th>
+<th>Jetson Pin</th>
+<th>Voltage</th>
+<th>Function</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>5V</td>
+<td>NA</td>
+<td>5.0V, 500mA</td>
+<td>Power Out from module</td>
+</tr>
+<tr>
+<td>Irid TX</td>
+<td>UART0_TXD (SOM 99)</td>
+<td>3.3V</td>
+<td>UART TX from Jetson</td>
+</tr>
+<tr>
+<td>Irid RX</td>
+<td>UART0_RXD (SOM 101)</td>
+<td>3.3V</td>
+<td>UART RX to Jetson</td>
+</tr>
+<tr>
+<td>Irid NA</td>
+<td>NA</td>
+<td>NA</td>
+<td>Network Available (reserved, not currently used)</td>
+</tr>
+<tr>
+<td>Irid Ring</td>
+<td>GPIO12 (SOM 218)</td>
+<td>3.3V</td>
+<td>Iridium Ring signal</td>
+</tr>
+<tr>
+<td>Irid On</td>
+<td>NA</td>
+<td>NA</td>
+<td>Iridium modem control (reserved, not current used)</td>
+</tr>
+<tr>
+<td>GPIO1</td>
+<td>I2S0_FS (SOM 197)</td>
+<td>3.3V</td>
+<td>Spare GPIO for user applications</td>
+</tr>
+<tr>
+<td>nMOD_SLP</td>
+<td>nMOD_SLEEP (SOM 178)</td>
+<td>3.3V</td>
+<td>Low Power/ Sleep Mode input</td>
+</tr>
+<tr>
+<td>SLEEP/WAK</td>
+<td>SLEEP/WAKE (SOM 240)</td>
+<td>3.3V</td>
+<td>Control Jetson Power State</td>
+</tr>
+<tr>
+<td>GND</td>
+<td>NA</td>
+<td>GND</td>
+<td>Ground</td>
+</tr>
+</tbody>
+</table>
+<h2 id="ins">INS<a class="headerlink" href="#ins" title="Permanent link">&para;</a></h2>
+<p>The INS is designed to be used with a VectorNAV external INS system. The INS signals are driven by a LTC2863IDD RS422 transceiver, connected to UART4 (SERIAL4) of the autopilot. The +12V output on this connector is current limited to 375mA.</p>
+<h2 id="pwm-outputs">PWM Outputs<a class="headerlink" href="#pwm-outputs" title="Permanent link">&para;</a></h2>
 <p>The Pulse Width Modulated (PWM) outputs are at 3.3VDC. They update every 2.5ms and can be set from 800-2200uS pulse widths (e.g., via ArduPilot).</p>
 <h2 id="gnss-antennas">GNSS Antennas<a class="headerlink" href="#gnss-antennas" title="Permanent link">&para;</a></h2>
 <p>The electrical specifications for the 3x GNSS antennas are found below:  </p>
