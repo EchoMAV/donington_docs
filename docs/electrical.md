@@ -8,12 +8,12 @@ The PWR LED on the left side indicates that the system is powered and running. T
 Connector   | Pins | Type | Part Number | Mating Cable/Connector Assembly | Notes
 ------------ | ------------- | ------------- | ------------- | ------------- | ------------- 
 PWR       | 4 | M12, A-Code Male  | T4140012041-000  | Tensility 10-03805 |  13-36VDC, 4A + supply        
-PWM       | 12 | M12, A-Code Female | T4141012121-000  | 6-2271110-2 |          
-INS       | 8 | M12, A-Code Female | T4141012081-000  | T4111002081-000 |  
-IRIDIUM   | 12 | M12, A-Code Female    | T4141012121-000 | 6-2271110-2 | 
-FMU CAN   | 4 | M12, A-Code Female  | T4141012041-000 | T4111002041-000 | 
-NMEA2K    | 5 | M12, A-Code Female   | T4141012051-000  | T4111002051-000 |   
-ANALOG IN | 5 | M12, D-Code Female   | T4141512051-000     | T4111501051-000 |  
+PWM       | 12 | M12, A-Code Female | T4141012121-000  | 6-2271110-2 |  [PWM Notes](hardware.md#pwm-outputs)        
+INS       | 8 | M12, A-Code Female | T4141012081-000  | T4111002081-000 |  [INS Notes](hardware.md#ins)   
+IRIDIUM   | 12 | M12, A-Code Female    | T4141012121-000 | 6-2271110-2 | [Iridium Notes](hardware.md#iridium)   
+FMU CAN   | 4 | M12, A-Code Female  | T4141012041-000 | T4111002041-000 |  [CAN Notes](hardware.md#can)   
+NMEA2K    | 5 | M12, A-Code Female   | T4141012051-000  | T4111002051-000 |   [NMEA2K Notes](hardware.md#nmea2k)   
+ANALOG IN | 5 | M12, D-Code Female   | T4141512051-000     | T4111501051-000 |  [PWM Notes](hardware.md#pwm-outputs)   
 
 </center>
 

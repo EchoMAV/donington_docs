@@ -112,7 +112,8 @@ The 12V output on the NMEA2K connector is limited to 2A.
 The Iridium connector uses several GPIO pins which are mapped back to the Jetson. The 5V output provided on this connector is limited to 500mA.
 
 Pin   | Jetson Pin    | Voltage | Function     
------------- | ------------- | ------------ 
+------------ | ------------- | ------------ | ------------
+5V     | NA   | 5.0V, 500mA|  Power Out from module
 Irid TX      | UART0_TXD (SOM 99)   | 3.3V |  UART TX from Jetson
 Irid RX       | UART0_RXD (SOM 101)         | 3.3V | UART RX to Jetson
 Irid NA        |   NA      | NA | Network Available (reserved, not currently used)
@@ -121,8 +122,13 @@ Irid On        | NA        |  NA | Iridium modem control (reserved, not current 
 GPIO1        |  I2S0_FS (SOM 197)    |  3.3V | Spare GPIO for user applications
 nMOD_SLP        | nMOD_SLEEP (SOM 178)      |  3.3V | Low Power/ Sleep Mode input
 SLEEP/WAK        | SLEEP/WAKE (SOM 240)       |  3.3V | Control Jetson Power State
+GND       | NA      | GND | Ground
 
-## PWM Ouputs
+## INS
+
+The INS is designed to be used with a VectorNAV external INS system. The INS signals are driven by a LTC2863IDD RS422 transceiver, connected to UART4 (SERIAL4) of the autopilot. The +12V output on this connector is current limited to 375mA.
+
+## PWM Outputs
 
 The Pulse Width Modulated (PWM) outputs are at 3.3VDC. They update every 2.5ms and can be set from 800-2200uS pulse widths (e.g., via ArduPilot).
 
