@@ -664,7 +664,7 @@
 </div>
 <h2 id="accessing-the-jetson-via-network">Accessing the Jetson via network<a class="headerlink" href="#accessing-the-jetson-via-network" title="Permanent link">¶</a></h2>
 <p>The Donington system has two 100Mbps Ethernet ports (ETH1 and ETH2). Upstream, these go to a network switch, so either one can be used to access the Jetson SOM. An M12 to RJ45 cable is required (e.g. <a href="https://www.digikey.com/en/products/detail/asi-ez/ASI-M12-RJ45-11101/14008395?s=N4IgTCBcDaIIIGUCSBaAsgRjCgSgKQBYBWFDMgBgwB0AXEAXQF8g">ASI-M12-RJ45-11101</a>)</p>
-<p>EchoMAV's standard provisioning sets the Jetson module to a static IP address provided on the label with the device. There is also an alias ip of 192.168.253.0 which can be used if you do not know the static IP. </p>
+<p>EchoMAV's standard provisioning sets the Jetson module to a static IP address provided on the label with the device. There is also an alias ip of 192.168.154.0 which can be used if you do not know the static IP. </p>
 <p>To gain console access to the Jetson over the network, use <code>ssh</code> from a terminal session on the host computer:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>ssh echopilot@IP_ADDRESS    #IP_ADDRESS obtained from the label on the device
 </code></pre></div>
@@ -674,7 +674,7 @@
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>If the label is damaged, or the static IP has been inadvertently changes, you can use the configuration IP "backdoor" alias of <strong>192.168.154.0/24</strong> to access the system. Ensure your host system is in the 192.168.0.0/24 subnet (any valid IP address <strong>not equal</strong> to 192.168.154.0 will work). Please refer to the instructions above for how to change your host IP address.</p>
+<p>If the label is damaged, or the static IP has been inadvertently changes, you can use the configuration IP "backdoor" alias of <strong>192.168.154.0/24</strong> to access the system. Ensure your host system is in the 192.168.154.0/24 subnet (any valid IP address <strong>not equal</strong> to 192.168.154.0 will work). Please refer to the instructions above for how to change your host IP address.</p>
 </div>
 <h2 id="ip-configuration">IP Configuration<a class="headerlink" href="#ip-configuration" title="Permanent link">¶</a></h2>
 <p><strong>The EchoPilot AI will be labeled from the factory with a static IP address in the 10.223.0.0/16 subnet such as 10.223.134.126 (for example only). If you do not know the IP address, you may be able to access the system using the backdoor/alias IP of 192.168.154.0/24</strong>. </p>
