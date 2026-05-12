@@ -119,19 +119,35 @@ To ensure the settings were applied, we recommend power cycling, then reconnecti
 
 ### Using the Septentrio H for both GNSS position and heading.
 
-The Septentrio Mosaic H is capable of calculating static heading if two antennas are used in the appropriate way. Please refer to the Mosaic-H manual for more innformation. To enable heading on the Mosaic H, you need to ensure that the __AttEuler__ and __AttCovEuler__ SBF messages are configured (see instructios above for setting up a SBF stream). Then the following parameters should be configured in ArduPilot:
+The Septentrio Mosaic H is capable of calculating static heading if two antennas are used in the appropriate way. Inside the H config interface, setup the following stream:
 
-| ArduPilot Parameter | Value             | Description                                                                                      |
-|--------------------|-------------------|--------------------------------------------------------------------------------------------------|
-| AHRS_EKF_TYPE      | 3                 | Enable use for EKF3                                                                              |
-| EKF2_ENABLE        | 0                 | Disable EKF2                                                                                     |
-| EKF3_ENABLE        | 1                 | Enable EKF3                                                                                      |
-| EKF_MAG_CAL        | 2 (for ArduRover) | Can be left at default value                                                                     |
-| EK3_SRC1_YAW       | 2 or 3            | Set to 2 if using GPS Heading only, or 3 if a compass(es) is also in the system                  |
-| GPS_TYPE           | 26 (SBF-Heading)  | Sets the GPS type to include heading                                                             |
-| GPS_MB1_OFS_X      | USER DEFINED      | X position of the base (primary) GPS antenna in body frame from the position of the 2nd antenna  |
-| GPS_MB1_OFS_Y      | USER DEFINED      | Y position of the base (primary) GPS antenna in body frame from the position of the 2nd antenna. |
-| GPS_MB1_OFS_Z      | USER DEFINED      | Z position of the base (primary) GPS antenna in body frame from the position of the 2nd antenna  |
+- **Port:** COM1
+- **Interval:** 100 msec
+- **Messages:** GGA + GSA + GSV + HDT + RMC
+- **COM1 Baud:** 230400
+
+## Mission Planner Parameters
+
+| Parameter | Value | Description |
+|---|---:|---|
+| GPS_TYPE | 5 | NMEA GPS |
+| GPS_AUTO_CONFIG | 0 | Disable automatic GPS configuration |
+| GPS_AUTO_SWITCH | 0 | Disable automatic GPS switching |
+| GPS_SAVE_CFG | 0 | Do not save GPS configuration |
+| GPS_DRV_OPTIONS | 0 | Default driver options |
+| GPS_MB1_TYPE | 0 | Disable moving baseline GPS 1 |
+| GPS_MB2_TYPE | 0 | Disable moving baseline GPS 2 |
+| GPS_RATE_MS | 100 | 100 ms GPS update rate |
+| GPS_COM_PORT | 1 | COM1 |
+| EK3_SRC1_YAW | 2 | Use GPS heading as yaw source |
+| COMPASS_ENABLE | 0 | Compass disabled |
+| COMPASS_USE | 0 | Compass disabled |
+| AHRS_EKF_TYPE | 3 | Enable EKF3 |
+| EK3_ENABLE | 1 | Enable EKF3 |
+| SERIAL1_PROTOCOL | 5 | GPS on SERIAL1 |
+| SERIAL1_BAUD | 230 | 230400 baud |
+| SERIAL3_PROTOCOL | 5 | GPS on SERIAL3 |
+| SERIAL3_BAUD | 115 | 115200 baud for X5 |
 
 Please find information [here](https://customersupport.septentrio.com/s/article/How-to-integrate-latest-Septentrio-GNSS-receivers-with-Ardupilot-using-Pixhawk-standard-boards) for additional info about configuring Septentrio devices with ArduPilot. For additional information about the GPS_MB1_XXX_X parameters, please refer [here](https://ardupilot.org/rover/docs/parameters.html#gps-mb1-parameters).
 
