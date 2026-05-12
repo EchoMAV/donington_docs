@@ -124,7 +124,6 @@ The Septentrio Mosaic H is capable of calculating static heading if two antennas
 - **Port:** COM1
 - **Interval:** 100 msec
 - **Messages:** GGA + GSA + GSV + HDT + RMC
-- **COM1 Baud:** 230400
 
 ## Mission Planner Parameters
 
