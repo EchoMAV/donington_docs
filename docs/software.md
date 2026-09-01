@@ -29,7 +29,7 @@ By default, the Donington system will come from the factory with __ArduRover(Boa
 | SERIAL2_BAUD       | 500           | 500,000 bps baud rate                               |
 | GPS_AUTO_CONFIG    | 0 (Disabled)  | Disables GPS Auto Configuration                     |
 | GPS_TYPE           | 10 (SBF)      | Sets GPS 1 type to SBF                              |
-| GPS_TYPE2          | 10 (SBF)      | Sets GPS 2 type to SBF                              |
+| GPS2_TYPE          | 10 (SBF)      | Sets GPS 2 type to SBF                              |
 | SERIAL1_PROTOCOL   | 5 (GPS)       | Sets serial port 1 to use as GPS                    |
 | SERIAL1_BAUD       | 115 (115,200) | Sets serial port 1 baud rate to 115,200             |
 | SERIAL3_PROTOCOL   | 5 (GPS)       | Sets serial port 3 to use as GPS                    |
