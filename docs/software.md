@@ -16,25 +16,7 @@ From the factory, the autopilot system of each Donington system is provisioned w
 
     The Cockpit web application has been set up to allow basic configuration changes to Mavlink-router including connection mode, endpoint IP and Port and the input serial port connected to the autopilot system. While we believe this will be sufficient for the majority of applications, Mavlink-router can be configured with much more complicated scenarios, in which case we recommend NOT using the webUI and rather editing `etc\mavlink-router\main.conf` directly. 
 
-
-
-## Default Autopilot Software and Configuration
-
-By default, the Donington system will come from the factory with __ArduRover(Boat)__ installed and bench tested. The following important ArduPilot parameters are set to ensure connectivity to the Jetson and proper use of the Septentrio GNSS systems:
-
-
-| ArduPilot Parameter | Value        | Description                                         |
-|--------------------|---------------|-----------------------------------------------------|
-| SERIAL2_PROTOCOL   | MAVLink2      | The telemetry connection between the FMU and Jetson |
-| SERIAL2_BAUD       | 500           | 500,000 bps baud rate                               |
-| GPS_AUTO_CONFIG    | 0 (Disabled)  | Disables GPS Auto Configuration                     |
-| GPS_TYPE           | 10 (SBF)      | Sets GPS 1 type to SBF                              |
-| GPS2_TYPE          | 10 (SBF)      | Sets GPS 2 type to SBF                              |
-| SERIAL1_PROTOCOL   | 5 (GPS)       | Sets serial port 1 to use as GPS                    |
-| SERIAL1_BAUD       | 115 (115,200) | Sets serial port 1 baud rate to 115,200             |
-| SERIAL3_PROTOCOL   | 5 (GPS)       | Sets serial port 3 to use as GPS                    |
-| SERIAL3_BAUD       | 115 (115,200) | Sets serial port 3 baud rate to 115,200             |
-
+### Autopilot Flashing
 
 The hardware is compatible with other variants of ArduPilot (e.g. Plane, Sub, etc.) as well as the PX4 autopilot project. Instructions for how to flash other versions of firmware can be found at the links below:
 
@@ -88,7 +70,7 @@ sudo systemctl disable mavlink-router
 At this point, you can install your own application, which opens ```/dev/ttyTHS0``` (on most Jetson systems) at 500,000 kbps and uses a [mavlink parser library](https://mavlink.io/en/getting_started/use_libraries.html) to parse the byte stream.
 
 
-## Additional information related to Septentrio GNSS
+## Information related to Septentrio GNSS
 
 The Septentrio X5 and H units must be configured to output an SBF stream on COM1 before they will work with ArduPilot. The instructions to do so are below:
 
@@ -96,6 +78,8 @@ The Septentrio X5 and H units must be configured to output an SBF stream on COM1
     It is recommended to apply the ArduPilot parameters [defined above](#default-autopilot-software-and-configuration) BEFORE configuring the Septentrio GNSS systems.
 
 ![Inside Box](assets/inside_box.png)
+
+### X5 Configuration.
 
 1. Apply power to the Donington system, open the lid, and connect to the USB configuration port for the GNSS port you wish to configure (either the X-5 or the H).
 2. Many USB devices will enumerate, including one which should be a RNDIS network interface.
@@ -117,7 +101,7 @@ To ensure the settings were applied, we recommend power cycling, then reconnecti
 
 
 
-### Using the Septentrio H for both GNSS position and heading.
+### Mosaic-H Configuration for Dual Antennas.
 
 The Septentrio Mosaic H is capable of calculating static heading if two antennas are used in the appropriate way. Inside the H config interface, setup the following stream:
 
@@ -127,15 +111,15 @@ The Septentrio Mosaic H is capable of calculating static heading if two antennas
 
 ## Mission Planner Parameters
 
-| Parameter | Value | Description |
+| Ardupilot Parameter | Value | Description |
 |---|---:|---|
 | GPS_TYPE | 5 | NMEA GPS |
 | GPS_AUTO_CONFIG | 0 | Disable automatic GPS configuration |
 | GPS_AUTO_SWITCH | 0 | Disable automatic GPS switching |
 | GPS_SAVE_CFG | 0 | Do not save GPS configuration |
 | GPS_DRV_OPTIONS | 0 | Default driver options |
-| GPS_MB1_TYPE | 0 | Disable moving baseline GPS 1 |
-| GPS_MB2_TYPE | 0 | Disable moving baseline GPS 2 |
+| GPS1_MB_TYPE | 0 | Disable moving baseline GPS 1 |
+| GPS2_MB_TYPE | 0 | Disable moving baseline GPS 2 |
 | GPS_RATE_MS | 100 | 100 ms GPS update rate |
 | GPS_COM_PORT | 1 | COM1 |
 | EK3_SRC1_YAW | 2 | Use GPS heading as yaw source |
@@ -147,6 +131,15 @@ The Septentrio Mosaic H is capable of calculating static heading if two antennas
 | SERIAL1_BAUD | 230 | 230400 baud |
 | SERIAL3_PROTOCOL | 5 | GPS on SERIAL3 |
 | SERIAL3_BAUD | 115 | 115200 baud for X5 |
+| SERIAL2_PROTOCOL   | MAVLink2      | The telemetry connection between the FMU and Jetson |
+| SERIAL2_BAUD       | 500           | 500,000 bps baud rate                               |
+| GPS_AUTO_CONFIG    | 0 (Disabled)  | Disables GPS Auto Configuration                     |
+| GPS_TYPE           | 10 (SBF)      | Sets GPS 1 type to SBF                              |
+| GPS2_TYPE          | 10 (SBF)      | Sets GPS 2 type to SBF                              |
+| SERIAL1_PROTOCOL   | 5 (GPS)       | Sets serial port 1 to use as GPS                    |
+| SERIAL1_BAUD       | 115 (115,200) | Sets serial port 1 baud rate to 115,200             |
+| SERIAL3_PROTOCOL   | 5 (GPS)       | Sets serial port 3 to use as GPS                    |
+| SERIAL3_BAUD       | 115 (115,200) | Sets serial port 3 baud rate to 115,200             |
 
 Please find information [here](https://customersupport.septentrio.com/s/article/How-to-integrate-latest-Septentrio-GNSS-receivers-with-Ardupilot-using-Pixhawk-standard-boards) for additional info about configuring Septentrio devices with ArduPilot. For additional information about the GPS_MB1_XXX_X parameters, please refer [here](https://ardupilot.org/rover/docs/parameters.html#gps-mb1-parameters).
 
