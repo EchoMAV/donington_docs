@@ -113,33 +113,32 @@ The Septentrio Mosaic H is capable of calculating static heading if two antennas
 
 | Ardupilot Parameter | Value | Description |
 |---|---:|---|
-| GPS_TYPE | 5 | NMEA GPS |
-| GPS_AUTO_CONFIG | 0 | Disable automatic GPS configuration |
-| GPS_AUTO_SWITCH | 0 | Disable automatic GPS switching |
-| GPS_SAVE_CFG | 0 | Do not save GPS configuration |
-| GPS_DRV_OPTIONS | 0 | Default driver options |
-| GPS1_MB_TYPE | 0 | Disable moving baseline GPS 1 |
-| GPS2_MB_TYPE | 0 | Disable moving baseline GPS 2 |
-| GPS_RATE_MS | 100 | 100 ms GPS update rate |
-| GPS_COM_PORT | 1 | COM1 |
-| EK3_SRC1_YAW | 2 | Use GPS heading as yaw source |
-| COMPASS_ENABLE | 0 | Compass disabled |
-| COMPASS_USE | 0 | Compass disabled |
-| AHRS_EKF_TYPE | 3 | Enable EKF3 |
-| EK3_ENABLE | 1 | Enable EKF3 |
-| SERIAL1_PROTOCOL | 5 | GPS on SERIAL1 |
-| SERIAL1_BAUD | 230 | 230400 baud |
-| SERIAL3_PROTOCOL | 5 | GPS on SERIAL3 |
-| SERIAL3_BAUD | 115 | 115200 baud for X5 |
-| SERIAL2_PROTOCOL   | MAVLink2      | The telemetry connection between the FMU and Jetson |
-| SERIAL2_BAUD       | 500           | 500,000 bps baud rate                               |
-| GPS_AUTO_CONFIG    | 0 (Disabled)  | Disables GPS Auto Configuration                     |
-| GPS_TYPE           | 10 (SBF)      | Sets GPS 1 type to SBF                              |
+| AHRS_EKF_TYPE      | 3             | Enable EKF3                                         |
+| COMPASS_ENABLE     | 0             | Compass disabled                                    |
+| COMPASS_USE        | 0             | Compass disabled                                    |
+| EK3_ENABLE         | 1             | Enable EKF3                                         |
+| EK3_SRC1_YAW       | 2             | Use GPS heading as yaw source                       |
+| GPS_AUTO_CONFIG    | 0             | Disable automatic GPS configuration                 |
+| GPS_AUTO_SWITCH    | 0             | Disable automatic GPS switching                     |
+| GPS_COM_PORT       | 0             | COM1                                                |
+| GPS_COM_PORT2      | 1             | COM2                                                |
+| GPS_DRV_OPTIONS    | 0             | Default driver options                              |
+| GPS_RATE_MS        | 100           | 100 ms GPS update rate                              |
+| GPS_SAVE_CFG       | 0             | Do not save GPS configuration                       |
+| GPS_TYPE           | 5             | NMEA GPS                                            |
+| GPS1_TYPE          | 10 (SBF)      | Sets GPS 1 type to SBF                              |
 | GPS2_TYPE          | 10 (SBF)      | Sets GPS 2 type to SBF                              |
+| GPS1_MB_TYPE       | 0             | Disable moving baseline GPS 1                       |
+| GPS2_MB_TYPE       | 0             | Disable moving baseline GPS 2                       |
+| SERIAL1_BAUD       | 230 (230,200) | Sets serial port 1 baud rate to 230,200             |
 | SERIAL1_PROTOCOL   | 5 (GPS)       | Sets serial port 1 to use as GPS                    |
-| SERIAL1_BAUD       | 115 (115,200) | Sets serial port 1 baud rate to 115,200             |
-| SERIAL3_PROTOCOL   | 5 (GPS)       | Sets serial port 3 to use as GPS                    |
+| SERIAL2_BAUD       | 500           | 500,000 bps baud rate                               |
+| SERIAL2_PROTOCOL   | MAVLink2      | The telemetry connection between the FMU and Jetson |
 | SERIAL3_BAUD       | 115 (115,200) | Sets serial port 3 baud rate to 115,200             |
+| SERIAL3_PROTOCOL   | 5 (GPS)       | Sets serial port 3 to use as GPS                    |
+
+!!! note
+    Older versions of ardupilot have different naming conventions for some parameters (GPS_MB1_TYPE -> GPS1_MB_TYPE)
 
 Please find information [here](https://customersupport.septentrio.com/s/article/How-to-integrate-latest-Septentrio-GNSS-receivers-with-Ardupilot-using-Pixhawk-standard-boards) for additional info about configuring Septentrio devices with ArduPilot. For additional information about the GPS_MB1_XXX_X parameters, please refer [here](https://ardupilot.org/rover/docs/parameters.html#gps-mb1-parameters).
 
