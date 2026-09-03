@@ -431,16 +431,22 @@
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#default-autopilot-software-and-configuration" class="md-nav__link">
+    <nav class="md-nav" aria-label="Default Installed Jetson Software">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#autopilot-flashing" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Default Autopilot Software and Configuration
+        Autopilot Flashing
       
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -473,22 +479,33 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#additional-information-related-to-septentrio-gnss" class="md-nav__link">
+  <a href="#information-related-to-septentrio-gnss" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Additional information related to Septentrio GNSS
+        Information related to Septentrio GNSS
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Additional information related to Septentrio GNSS">
+    <nav class="md-nav" aria-label="Information related to Septentrio GNSS">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#using-the-septentrio-h-for-both-gnss-position-and-heading" class="md-nav__link">
+  <a href="#x5-configuration" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Using the Septentrio H for both GNSS position and heading.
+        X5 Configuration.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mosaic-h-configuration-for-dual-antennas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mosaic-H Configuration for Dual Antennas.
       
     </span>
   </a>
@@ -632,64 +649,7 @@
 <p>The Cockpit web application has been set up to allow basic configuration changes to Mavlink-router including connection mode, endpoint IP and Port and the input serial port connected to the autopilot system. While we believe this will be sufficient for the majority of applications, Mavlink-router can be configured with much more complicated scenarios, in which case we recommend NOT using the webUI and rather editing <code>etc\mavlink-router\main.conf</code> directly. </p>
 </li>
 </ul>
-<h2 id="default-autopilot-software-and-configuration">Default Autopilot Software and Configuration<a class="headerlink" href="#default-autopilot-software-and-configuration" title="Permanent link">¶</a></h2>
-<p>By default, the Donington system will come from the factory with <strong>ArduRover(Boat)</strong> installed and bench tested. The following important ArduPilot parameters are set to ensure connectivity to the Jetson and proper use of the Septentrio GNSS systems:</p>
-<table>
-<thead>
-<tr>
-<th>ArduPilot Parameter</th>
-<th>Value</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>SERIAL2_PROTOCOL</td>
-<td>MAVLink2</td>
-<td>The telemetry connection between the FMU and Jetson</td>
-</tr>
-<tr>
-<td>SERIAL2_BAUD</td>
-<td>500</td>
-<td>500,000 bps baud rate</td>
-</tr>
-<tr>
-<td>GPS_AUTO_CONFIG</td>
-<td>0 (Disabled)</td>
-<td>Disables GPS Auto Configuration</td>
-</tr>
-<tr>
-<td>GPS_TYPE</td>
-<td>10 (SBF)</td>
-<td>Sets GPS 1 type to SBF</td>
-</tr>
-<tr>
-<td>GPS_TYPE2</td>
-<td>10 (SBF)</td>
-<td>Sets GPS 2 type to SBF</td>
-</tr>
-<tr>
-<td>SERIAL1_PROTOCOL</td>
-<td>5 (GPS)</td>
-<td>Sets serial port 1 to use as GPS</td>
-</tr>
-<tr>
-<td>SERIAL1_BAUD</td>
-<td>115 (115,200)</td>
-<td>Sets serial port 1 baud rate to 115,200</td>
-</tr>
-<tr>
-<td>SERIAL3_PROTOCOL</td>
-<td>5 (GPS)</td>
-<td>Sets serial port 3 to use as GPS</td>
-</tr>
-<tr>
-<td>SERIAL3_BAUD</td>
-<td>115 (115,200)</td>
-<td>Sets serial port 3 baud rate to 115,200</td>
-</tr>
-</tbody>
-</table>
+<h3 id="autopilot-flashing">Autopilot Flashing<a class="headerlink" href="#autopilot-flashing" title="Permanent link">¶</a></h3>
 <p>The hardware is compatible with other variants of ArduPilot (e.g. Plane, Sub, etc.) as well as the PX4 autopilot project. Instructions for how to flash other versions of firmware can be found at the links below:</p>
 <ul>
 <li><a href="https://echomav.github.io/docs/latest/build_ardupilot/">Flashing ArduPilot</a></li>
@@ -728,13 +688,14 @@
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>sudo systemctl disable mavlink-router
 </code></pre></div>
 At this point, you can install your own application, which opens <code>/dev/ttyTHS0</code> (on most Jetson systems) at 500,000 kbps and uses a <a href="https://mavlink.io/en/getting_started/use_libraries.html">mavlink parser library</a> to parse the byte stream.<p></p>
-<h2 id="additional-information-related-to-septentrio-gnss">Additional information related to Septentrio GNSS<a class="headerlink" href="#additional-information-related-to-septentrio-gnss" title="Permanent link">¶</a></h2>
+<h2 id="information-related-to-septentrio-gnss">Information related to Septentrio GNSS<a class="headerlink" href="#information-related-to-septentrio-gnss" title="Permanent link">¶</a></h2>
 <p>The Septentrio X5 and H units must be configured to output an SBF stream on COM1 before they will work with ArduPilot. The instructions to do so are below:</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>It is recommended to apply the ArduPilot parameters <a href="#default-autopilot-software-and-configuration">defined above</a> BEFORE configuring the Septentrio GNSS systems.</p>
 </div>
 <p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../assets/inside_box.png" data-desc-position="bottom"><img alt="Inside Box" src="../assets/inside_box.png"></a></p>
+<h3 id="x5-configuration">X5 Configuration.<a class="headerlink" href="#x5-configuration" title="Permanent link">¶</a></h3>
 <ol>
 <li>Apply power to the Donington system, open the lid, and connect to the USB configuration port for the GNSS port you wish to configure (either the X-5 or the H).</li>
 <li>Many USB devices will enumerate, including one which should be a RNDIS network interface.</li>
@@ -758,7 +719,7 @@ At this point, you can install your own application, which opens <code>/dev/ttyT
 <p class="admonition-title">Important</p>
 </div>
 <p>To ensure the settings were applied, we recommend power cycling, then reconnecting to the GNSS unit via USB and the web browser, navigate to NMEA/SBF Out tab and ensure the output you set up in the previous steps has persisted across a power cycle.</p>
-<h3 id="using-the-septentrio-h-for-both-gnss-position-and-heading">Using the Septentrio H for both GNSS position and heading.<a class="headerlink" href="#using-the-septentrio-h-for-both-gnss-position-and-heading" title="Permanent link">¶</a></h3>
+<h3 id="mosaic-h-configuration-for-dual-antennas">Mosaic-H Configuration for Dual Antennas.<a class="headerlink" href="#mosaic-h-configuration-for-dual-antennas" title="Permanent link">¶</a></h3>
 <p>The Septentrio Mosaic H is capable of calculating static heading if two antennas are used in the appropriate way. Inside the H config interface, setup the following stream:</p>
 <ul>
 <li><strong>Port:</strong> COM1</li>
@@ -769,61 +730,16 @@ At this point, you can install your own application, which opens <code>/dev/ttyT
 <table>
 <thead>
 <tr>
-<th>Parameter</th>
+<th>Ardupilot Parameter</th>
 <th style="text-align: right;">Value</th>
 <th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>GPS_TYPE</td>
-<td style="text-align: right;">5</td>
-<td>NMEA GPS</td>
-</tr>
-<tr>
-<td>GPS_AUTO_CONFIG</td>
-<td style="text-align: right;">0</td>
-<td>Disable automatic GPS configuration</td>
-</tr>
-<tr>
-<td>GPS_AUTO_SWITCH</td>
-<td style="text-align: right;">0</td>
-<td>Disable automatic GPS switching</td>
-</tr>
-<tr>
-<td>GPS_SAVE_CFG</td>
-<td style="text-align: right;">0</td>
-<td>Do not save GPS configuration</td>
-</tr>
-<tr>
-<td>GPS_DRV_OPTIONS</td>
-<td style="text-align: right;">0</td>
-<td>Default driver options</td>
-</tr>
-<tr>
-<td>GPS_MB1_TYPE</td>
-<td style="text-align: right;">0</td>
-<td>Disable moving baseline GPS 1</td>
-</tr>
-<tr>
-<td>GPS_MB2_TYPE</td>
-<td style="text-align: right;">0</td>
-<td>Disable moving baseline GPS 2</td>
-</tr>
-<tr>
-<td>GPS_RATE_MS</td>
-<td style="text-align: right;">100</td>
-<td>100 ms GPS update rate</td>
-</tr>
-<tr>
-<td>GPS_COM_PORT</td>
-<td style="text-align: right;">1</td>
-<td>COM1</td>
-</tr>
-<tr>
-<td>EK3_SRC1_YAW</td>
-<td style="text-align: right;">2</td>
-<td>Use GPS heading as yaw source</td>
+<td>AHRS_EKF_TYPE</td>
+<td style="text-align: right;">3</td>
+<td>Enable EKF3</td>
 </tr>
 <tr>
 <td>COMPASS_ENABLE</td>
@@ -836,37 +752,111 @@ At this point, you can install your own application, which opens <code>/dev/ttyT
 <td>Compass disabled</td>
 </tr>
 <tr>
-<td>AHRS_EKF_TYPE</td>
-<td style="text-align: right;">3</td>
-<td>Enable EKF3</td>
-</tr>
-<tr>
 <td>EK3_ENABLE</td>
 <td style="text-align: right;">1</td>
 <td>Enable EKF3</td>
 </tr>
 <tr>
-<td>SERIAL1_PROTOCOL</td>
+<td>EK3_SRC1_YAW</td>
+<td style="text-align: right;">2</td>
+<td>Use GPS heading as yaw source</td>
+</tr>
+<tr>
+<td>GPS_AUTO_CONFIG</td>
+<td style="text-align: right;">0</td>
+<td>Disable automatic GPS configuration</td>
+</tr>
+<tr>
+<td>GPS_AUTO_SWITCH</td>
+<td style="text-align: right;">0</td>
+<td>Disable automatic GPS switching</td>
+</tr>
+<tr>
+<td>GPS_COM_PORT</td>
+<td style="text-align: right;">0</td>
+<td>COM1</td>
+</tr>
+<tr>
+<td>GPS_COM_PORT2</td>
+<td style="text-align: right;">1</td>
+<td>COM2</td>
+</tr>
+<tr>
+<td>GPS_DRV_OPTIONS</td>
+<td style="text-align: right;">0</td>
+<td>Default driver options</td>
+</tr>
+<tr>
+<td>GPS_RATE_MS</td>
+<td style="text-align: right;">100</td>
+<td>100 ms GPS update rate</td>
+</tr>
+<tr>
+<td>GPS_SAVE_CFG</td>
+<td style="text-align: right;">0</td>
+<td>Do not save GPS configuration</td>
+</tr>
+<tr>
+<td>GPS_TYPE</td>
 <td style="text-align: right;">5</td>
-<td>GPS on SERIAL1</td>
+<td>NMEA GPS</td>
+</tr>
+<tr>
+<td>GPS1_TYPE</td>
+<td style="text-align: right;">10 (SBF)</td>
+<td>Sets GPS 1 type to SBF</td>
+</tr>
+<tr>
+<td>GPS2_TYPE</td>
+<td style="text-align: right;">10 (SBF)</td>
+<td>Sets GPS 2 type to SBF</td>
+</tr>
+<tr>
+<td>GPS1_MB_TYPE</td>
+<td style="text-align: right;">0</td>
+<td>Disable moving baseline GPS 1</td>
+</tr>
+<tr>
+<td>GPS2_MB_TYPE</td>
+<td style="text-align: right;">0</td>
+<td>Disable moving baseline GPS 2</td>
 </tr>
 <tr>
 <td>SERIAL1_BAUD</td>
-<td style="text-align: right;">230</td>
-<td>230400 baud</td>
+<td style="text-align: right;">230 (230,200)</td>
+<td>Sets serial port 1 baud rate to 230,200</td>
 </tr>
 <tr>
-<td>SERIAL3_PROTOCOL</td>
-<td style="text-align: right;">5</td>
-<td>GPS on SERIAL3</td>
+<td>SERIAL1_PROTOCOL</td>
+<td style="text-align: right;">5 (GPS)</td>
+<td>Sets serial port 1 to use as GPS</td>
+</tr>
+<tr>
+<td>SERIAL2_BAUD</td>
+<td style="text-align: right;">500</td>
+<td>500,000 bps baud rate</td>
+</tr>
+<tr>
+<td>SERIAL2_PROTOCOL</td>
+<td style="text-align: right;">MAVLink2</td>
+<td>The telemetry connection between the FMU and Jetson</td>
 </tr>
 <tr>
 <td>SERIAL3_BAUD</td>
-<td style="text-align: right;">115</td>
-<td>115200 baud for X5</td>
+<td style="text-align: right;">115 (115,200)</td>
+<td>Sets serial port 3 baud rate to 115,200</td>
+</tr>
+<tr>
+<td>SERIAL3_PROTOCOL</td>
+<td style="text-align: right;">5 (GPS)</td>
+<td>Sets serial port 3 to use as GPS</td>
 </tr>
 </tbody>
 </table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Older versions of ardupilot have different naming conventions for some parameters (GPS_MB1_TYPE -&gt; GPS1_MB_TYPE)</p>
+</div>
 <p>Please find information <a href="https://customersupport.septentrio.com/s/article/How-to-integrate-latest-Septentrio-GNSS-receivers-with-Ardupilot-using-Pixhawk-standard-boards">here</a> for additional info about configuring Septentrio devices with ArduPilot. For additional information about the GPS_MB1_XXX_X parameters, please refer <a href="https://ardupilot.org/rover/docs/parameters.html#gps-mb1-parameters">here</a>.</p>
 <h2 id="unique-board-identifier">Unique Board Identifier<a class="headerlink" href="#unique-board-identifier" title="Permanent link">¶</a></h2>
 <p>Each EchoPilot AI includes an AT24CS01-STUM unique ID EEPROM attached to the Jetson I2C 1 port at address 0x58. This can be used to obtain a unique 128-bit identifier (serial number) for your board. </p>
