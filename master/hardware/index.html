@@ -527,6 +527,56 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="GNSS Antennas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#recommended-antenna-specifications" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recommended Antenna Specifications
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#electrical-specifications" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Electrical Specifications
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dual-antenna-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dual-Antenna Configuration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#suggested-antenna-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Suggested Antenna Options
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -1015,14 +1065,148 @@
 <h2 id="pwm-outputs">PWM Outputs<a class="headerlink" href="#pwm-outputs" title="Permanent link">¶</a></h2>
 <p>The Pulse Width Modulated (PWM) outputs are at 3.3VDC. They update every 2.5ms and can be set from 800-2200uS pulse widths (e.g., via ArduPilot).</p>
 <h2 id="gnss-antennas">GNSS Antennas<a class="headerlink" href="#gnss-antennas" title="Permanent link">¶</a></h2>
-<p>The electrical specifications for the 3x GNSS antennas are found below:  </p>
-<p>DC bias: +5V<br>
-Equivalent DC series impedance at input: 2.5 Ohms typical, 3.0 Ohms max  <br>
-Antenna current limit: 150mA  <br>
-ANT_1 pre-amplification gain range: Single-antenna modules: 15-50 dB (AGC gain: 15-50dB), Dual-antenna modules: 15-35dB (AGC gain: 30-50dB)
-ANT_1 receiver noise:8.5 dB with 15 dB net pre-amplification, 18 dB with 25 dB net pre-amplification, 26 dB with 35 dB net pre-amplification, 35 dB with 45 dB net pre-amplification<br>
-RF nominal input impedance: 50 Ohms
-VSWR: &lt; 2:1 in all the supported bands  </p>
+<p>The Donington system provides three (3) SMA GNSS antenna connections supporting the onboard Septentrio mosaic-X5 and mosaic-H receivers.</p>
+<p>The mosaic-X5 utilizes a single antenna for GNSS positioning, while the mosaic-H utilizes two separate antennas to provide GNSS positioning and dual-antenna heading.</p>
+<p>For best performance, we recommend remotely mounting active, multiband GNSS antennas with an unobstructed view of the sky. Antennas should be connected to the appropriate Donington SMA ports using suitable 50-ohm coaxial cables.</p>
+<h3 id="recommended-antenna-specifications">Recommended Antenna Specifications<a class="headerlink" href="#recommended-antenna-specifications" title="Permanent link">¶</a></h3>
+<p>The recommended antenna specifications are provided below:</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Recommendation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Antenna Type</td>
+<td>Active, multiband GNSS</td>
+</tr>
+<tr>
+<td>Frequency Bands</td>
+<td>GPS L1, L2, and L5</td>
+</tr>
+<tr>
+<td>Constellation Support</td>
+<td>GPS, GLONASS, Galileo, BeiDou</td>
+</tr>
+<tr>
+<td>RF Impedance</td>
+<td>50 Ohms</td>
+</tr>
+<tr>
+<td>Environmental Protection</td>
+<td>IP67 or higher recommended</td>
+</tr>
+<tr>
+<td>Connection</td>
+<td>SMA-compatible coaxial connection</td>
+</tr>
+<tr>
+<td>Mounting</td>
+<td>Remote mounting with a clear view of the sky</td>
+</tr>
+</tbody>
+</table>
+<p>Additional frequency bands may be supported depending on the selected antenna and receiver configuration.</p>
+<h3 id="electrical-specifications">Electrical Specifications<a class="headerlink" href="#electrical-specifications" title="Permanent link">¶</a></h3>
+<p>The electrical specifications for the three (3) GNSS antenna connections are provided below:</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Specification</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Antenna DC Bias</td>
+<td>+5V</td>
+</tr>
+<tr>
+<td>Equivalent DC Series Impedance</td>
+<td>2.5 Ohms typical, 3.0 Ohms maximum</td>
+</tr>
+<tr>
+<td>Antenna Current Limit</td>
+<td>150mA</td>
+</tr>
+<tr>
+<td>mosaic-X5 Net Pre-Amplification Gain</td>
+<td>15–50 dB</td>
+</tr>
+<tr>
+<td>mosaic-H Net Pre-Amplification Gain</td>
+<td>15–35 dB per antenna input</td>
+</tr>
+<tr>
+<td>RF Nominal Input Impedance</td>
+<td>50 Ohms</td>
+</tr>
+<tr>
+<td>VSWR</td>
+<td>Less than 2:1 across supported frequency bands</td>
+</tr>
+</tbody>
+</table>
+<p>The antenna gain requirements refer to the net gain presented to the receiver after accounting for coaxial cable losses and any additional RF components.</p>
+<p>Select an antenna with a compatible 5V supply requirement and ensure that its current consumption does not exceed the specified limit.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Antenna gain should be evaluated after accounting for the complete RF signal path. An antenna with excessive gain may require attenuation, particularly when used with the mosaic-H.</p>
+<p>Please refer to the <a href="https://www.septentrio.com/system/files/support/mosaic_hardware_manual_v1.11.0.pdf">Septentrio mosaic Hardware Manual</a> for additional information about antenna gain, receiver noise figures, and RF integration.</p>
+</div>
+<h3 id="dual-antenna-configuration">Dual-Antenna Configuration<a class="headerlink" href="#dual-antenna-configuration" title="Permanent link">¶</a></h3>
+<p>The mosaic-H receiver supports dual-antenna GNSS heading. Two separate antennas must be installed and connected to the corresponding mosaic-H antenna ports to utilize this functionality.</p>
+<p>The following installation practices are recommended:</p>
+<ul>
+<li>Use two identical multiband GNSS antennas with matching frequency coverage.</li>
+<li>Use the same type and length of coaxial cable for both antennas whenever possible.</li>
+<li>Mount both antennas rigidly with an unobstructed view of the sky.</li>
+<li>Maintain a known separation distance between the antennas.</li>
+<li>Configure the receiver with the appropriate antenna geometry, baseline distance, and orientation.</li>
+</ul>
+<p>A larger antenna separation generally improves heading accuracy, although the practical baseline depends on available mounting space and installation requirements.</p>
+<p>Septentrio specifies a net pre-amplification gain of 15–35 dB at each mosaic-H antenna input. The net gain difference between the two antenna inputs should not exceed 5 dB.</p>
+<p>The net gain is calculated by subtracting coaxial cable losses and any additional RF attenuation from the active antenna gain.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The mosaic-H requires two separate antenna connections for dual-antenna heading, whereas the mosaic-X5 utilizes a single antenna.</p>
+<p>The mosaic-X5 may use a different antenna model than the mosaic-H, provided the antenna meets the applicable electrical requirements.</p>
+<p>For additional information, refer to the <a href="https://www.septentrio.com/system/files/support/mosaic_hardware_manual_v1.11.0.pdf">Septentrio mosaic Hardware Manual</a>.</p>
+</div>
+<h3 id="suggested-antenna-options">Suggested Antenna Options<a class="headerlink" href="#suggested-antenna-options" title="Permanent link">¶</a></h3>
+<p>The following antennas are suggested for consideration when selecting an antenna for the Donington system.</p>
+<table>
+<thead>
+<tr>
+<th>Antenna</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://www.septentrio.com/en/products/gps-gnss-antennas/tw3972">Tallysman TW3972</a></td>
+<td>Triple-band GNSS antenna supporting GPS L1/L2/L5. IP69K-rated housing with through-hole mounting.</td>
+</tr>
+<tr>
+<td><a href="https://www.septentrio.com/en/products/gps-gnss-antennas/tw7972">Tallysman TW7972</a></td>
+<td>Triple-band GNSS antenna supporting GPS L1/L2/L5. IP67-rated magnetic mounting with an SMA connector and optional cable.</td>
+</tr>
+<tr>
+<td><a href="https://www.septentrio.com/en/products/gps-gnss-antennas/polant-x-mf">PolaNt-x MF.v2</a></td>
+<td>High-precision multiband GNSS antenna suitable for marine, surveying, and other outdoor applications. Requires a suitable TNC-to-SMA coaxial connection.</td>
+</tr>
+</tbody>
+</table>
+<p>For inexpensive initial evaluation, the <a href="https://www.u-blox.com/en/product/ann-mb1-antenna">u-blox ANN-MB1-00</a> may also be considered. This antenna supports L1 and L5 and includes a 5-meter cable with an SMA connector.</p>
+<p>However, the ANN-MB1-00 does not support L2 and therefore will not utilize the full multiband capabilities of the Septentrio receivers.</p>
+<p>For mosaic-H evaluation, two matching antennas should be used.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The suggested antennas are provided as reference options and are not an exhaustive compatibility list. Verify antenna supply voltage, current consumption, net gain, frequency coverage, connector configuration, and environmental requirements before installation.</p>
+<p>For dual-antenna applications, both antenna signal paths must satisfy the mosaic-H gain requirements.</p>
+</div>
 
 
 
